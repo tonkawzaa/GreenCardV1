@@ -1,32 +1,130 @@
-<div data-role="view" data-title="reigister" data-layout="main" data-model="app.reigister" data-show="app.reigister.onShow" data-after-show="app.reigister.afterShow">
-    <div id="reigisterModel" class="form-view">
-        <form>
+<div data-role="view" data-title="" data-layout="main" data-model="app.reigister" data-show="app.reigister.onShow" data-after-show="app.reigister.afterShow">
+    <div id="reigisterModel" class="form-view" style="height:100vh">
+        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;">
+        <form >
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li class="form-content-item">
 
 
                     <label>
 
-                        <span>login</span>
+                        <span  class="form_reg">อีเมล์ของคุณ :</span>
 
-                        <input data-bind="value: reigisterModel.fields.login" placeholder="login" type="text">
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.email" placeholder="XXX@XXX.com" type="text">
                     </label>
 
+                </li>
+                
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span  class="form_reg">รหัสผ่าน :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.password1" placeholder="password" type="password">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span  class="form_reg">ยืนยันรหัสผ่าน :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.confirmpassword" placeholder="confirmpassword" type="password">
+                    </label>
+
+                </li>
+ 
+                <li class="form-content-item">
+
+
+                    <label>
+
+                       <span  class="form_reg">ชื่อ :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.firstname" placeholder="firstname" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+
+                    <label>
+
+                       <span  class="form_reg">นามสกุล :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.lastname" placeholder="lastname" type="text">
+                    </label>
+
+                </li>
+                
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span  class="form_reg">เบอร์โทรศัพท์ :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.mobile" placeholder="+663 444 555 666" type="tel">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+                    <label>
+
+                        <span  class="form_reg">เพศ :</span>
+
+                        <select class="form_reg" data-bind="value: reigisterModel.fields.gender" data-role="dropdownlist">
+                            <option value="M">ชาย</option>
+                            <option value="F">หญิง</option>
+                        </select>
+                    </label>
+                </li>
+                
+                <li class="form-content-item">
+
+
+                    <label>
+
+                       <span  class="form_reg"> วันเกิด :</span>
+
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.birthdate" type="date">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+
+                    <label>
+
+                        <span  class="form_reg">หมายเลขบัตรประชาชน :</span>
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" placeholder="citizen_id" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+                    <label>
+
+                       <span  class="form_reg"> อาชีพ:</span>
+
+                        <select class="form_reg" data-bind="value: reigisterModel.fields.occupation" data-role="dropdownlist">
+                            <option value="0">ราชการ</option>
+                            <option value="1">เอกชน</option>
+                            <option value="2">รัฐวิสาหกิจ</option>
+                            <option value="3">อิสระ</option>
+                            <option value="4">NGO</option>
+                            <option value="5">นิสิต-นักศึกษา </option>
+                        </select>
+                    </label>
                 </li>
             </ul>
 
             <div class="button-group">
-                <a class="primary" data-role="button" data-bind="events: { click: reigisterModel.submit }">ถัดไป</a>
+                <a  data-role="button" data-bind="events: { click: reigisterModel.submit }">ถัดไป >>></a>
             </div>
         </form>
-        <!-- START_CUSTOM_CODE_reigisterModel -->
-        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-        <!-- END_CUSTOM_CODE_reigisterModel -->
     </div>
-
-    <!-- START_CUSTOM_CODE_reigister -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_reigister -->
 </div>

@@ -9,9 +9,9 @@
     var bootstrap = function() {
         $(function() {
             app.mobileApp = new kendo.mobile.Application(document.body, {
-                skin: 'flat',
+                skin: 'nova',
                 transition: "zoom",
-                initial: 'components/home/view.html'
+                initial: 'components/reigister/view.html'
             });
         });
     };

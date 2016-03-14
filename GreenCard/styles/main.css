@@ -225,8 +225,8 @@
 }
 
 #kendoUiMobileApp.km-nova .button-group .km-button.primary {
-    background-color: #ff4350;
-    border-color: #ff4350;
+    background-color: transparent;
+    border-color: #fff;
 }
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
@@ -234,13 +234,13 @@
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
-    color: #fff;
-    background-color: #007aff;
+    background-color: transparent;
+    border-color: #fff;
 }
 
 #kendoUiMobileApp.km-android .button-group .km-button.primary {
-    color: #fff;
-    background-color: #33b5e5;
+     background-color: transparent;
+    border-color: #fff;
 }
 
 
@@ -256,6 +256,8 @@
 
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-above {
     font-size: 0.8em;
+    color: #ff00ff;
+    background-color: transparent;
 }
 
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-above input:not([type='checkbox']):not([type='radio']),
@@ -266,11 +268,13 @@
     position: static;
     margin-left: -0.4rem;
     margin-right: -0.4rem;
+    
 }
 
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-hidden input:not([type='checkbox']):not([type='radio']),
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-hidden select:not([multiple]) {
     position: absolute;
+    
 }
 
 #kendoUiMobileApp.km-nova .form-content .form-content-item .km-label-hidden input:not(.k-input):not([type='checkbox']):not([type='radio']),
@@ -310,6 +314,34 @@
     color: #ffffff;
     text-align: center;
 }
+
+.form_reg {
+    font-size: 18;
+    color: #ffffff;
+}
+.button {
+    color: #ffffff; 
+    border-width: 1;
+    border-color: #ffffff;
+    background-color: transparent;
+    background:transparent;
+    /* width: 250; */
+    margin: 20 10;
+    border-radius: 10;
+    /*font-weight: bold; */
+    font-size: 30;
+    text-align: center;
+}
+
+ 
+
+.textbox { 
+    background: transparent ; 
+    border: 1px solid #999; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
 
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
