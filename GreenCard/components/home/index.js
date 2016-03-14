@@ -8,11 +8,13 @@ app.home = kendo.observable({
   
     },
      register: function() {
-        			navigator.notification.alert("register");
+        			//navigator.notification.alert("register");
+         			app.mobileApp.navigate('components/termsofuse/view.html');
   
     },
 });
 kendo.bind($('#submitfunc'),app.home);
+//app = new kendo.mobile.Application(document.body, { layout: "main", transition: "fade" });
 // START_CUSTOM_CODE_home
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 

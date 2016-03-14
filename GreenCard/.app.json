@@ -8,6 +8,46 @@
       "title": "Home View",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "termsofuse",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [],
+          "name": "termsofuseModel",
+          "submitButton": "ยืนยัน",
+          "cancelButton": "ยกเลิก"
+        }
+      ],
+      "title": "terms of use",
+      "addToNavigation": true,
+      "icon": "details"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "reigister",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "login",
+              "title": "login",
+              "inputType": "text",
+              "titlePosition": "left",
+              "placeholder": "login"
+            }
+          ],
+          "name": "reigisterModel",
+          "submitButton": "ถัดไป"
+        }
+      ],
+      "title": "reigister",
+      "addToNavigation": true,
+      "icon": "bookmarks"
     }
   ],
   "dataProviders": [],
