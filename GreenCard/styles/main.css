@@ -57,7 +57,12 @@
 }
 
 #kendoUiMobileApp.km-flat .km-drawer .km-content {
-    background-color: #fcfcfc;
+    /* background-color: #fcfcfc; */
+    background-color: transparent;
+    background-image: url('../images/bg.jpg');
+	background-size: auto 100%;
+	background-repeat: repeat;
+	/* color : white; */
 }
 
 #kendoUiMobileApp form .form-content li p {
@@ -105,12 +110,14 @@
 }
 
 #kendoUiMobileApp #navigation-container .active {
-    background: #10c4b2;
-    color: #fff;
+    /*background: #10c4b2; */
+ 	background: transparent;
+    color: #000000;
 }
 
 #kendoUiMobileApp #navigation-container .active:after {
-    color: #fff;
+    background: transparent;
+    color: #000000;
 }
 
 #kendoUiMobileApp.km-nova #navigation-container.km-tabstrip .km-button {
@@ -213,7 +220,8 @@
 /* primary buttons */
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
-    background-color: #10c4b2;
+    background-color: transparent;
+    border-color: #fff;
 }
 
 #kendoUiMobileApp.km-nova .button-group .km-button.primary {
@@ -295,6 +303,12 @@
 
 #kendoUiMobileApp.km-nova .km-filter-wrap:before {
     color: #cacdce;
+}
+
+.message {
+    font-size: 22;
+    color: #ffffff;
+    text-align: center;
 }
 
 
