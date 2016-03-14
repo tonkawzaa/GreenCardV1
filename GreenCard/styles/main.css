@@ -217,12 +217,12 @@
 }
 
 #kendoUiMobileApp.km-nova .button-group .km-button.primary {
-    background-color: #10c4b2;
-    border-color: #10c4b2;
+    background-color: #ff4350;
+    border-color: #ff4350;
 }
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
-    color: #ffffff;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
