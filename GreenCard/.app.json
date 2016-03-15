@@ -87,6 +87,38 @@
       "components": [],
       "title": "welcome",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "forgotpass",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "reemail",
+              "title": "reemail",
+              "inputType": "text",
+              "titlePosition": "hidden",
+              "placeholder": "อีเมล์ที่ลงทะเบียนไว้"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "email1",
+              "title": "Email",
+              "inputType": "email",
+              "titlePosition": "left",
+              "placeholder": "example@example.com"
+            }
+          ],
+          "name": "forgotpassModel",
+          "submitButton": "Confirm"
+        }
+      ],
+      "title": "forgotpass",
+      "addToNavigation": true,
+      "icon": "bookmarks"
     }
   ],
   "dataProviders": [],

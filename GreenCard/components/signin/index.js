@@ -12,10 +12,19 @@ app.signin = kendo.observable({
 (function(parent) {
     var signinModel = kendo.observable({
         fields: {
-            password: '',
-            email: '',
+            password: 'password',
+            email: 'top@gmail.com',
         },
-        submit: function() {}
+        submit: function() {},
+        gohome: function() {
+                app.mobileApp.navigate('components/home/view.html');
+            },
+        gotermofuse: function() {
+                app.mobileApp.navigate('components/termsofuse/view.html');
+            },
+        goforgotpass: function() {
+                app.mobileApp.navigate('components/forgotpass/view.html');
+            },
     });
 
     parent.set('signinModel', signinModel);

@@ -8,10 +8,23 @@
 
     var bootstrap = function() {
         $(function() {
+            
+            var token,page_start;
+            token = null;
+        	token = localStorage.getItem(token);
+            
+            if(token!=null){
+            	page_start = 'components/welcome/view.html';
+            }else{
+               	page_start = 'components/home/view.html';
+             };
+            
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 skin: 'nova',
                 transition: "zoom",
-                initial: 'components/reigister/view.html'
+                initial: page_start,
+          
+                
             });
         });
     };

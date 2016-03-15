@@ -51,6 +51,7 @@ app.reigister = kendo.observable({
                             localStorage.setItem(token,result.data.access_token);
                             navigator.notification.alert(result.data.access_token);
                             //token = result.data.access_token;
+                            app.mobileApp.navigate('components/reigister/success.html');
                             
                         },
                         error: function(result) {
@@ -67,6 +68,9 @@ app.reigister = kendo.observable({
             },
         gohome: function() {
                 app.mobileApp.navigate('components/home/view.html');
+            },
+        gowelcome: function() {
+                app.mobileApp.navigate('components/welcome/view.html');
             },
     });
 

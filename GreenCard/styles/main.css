@@ -68,12 +68,14 @@
 #kendoUiMobileApp form .form-content li p {
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 #kendoUiMobileApp .icon-group .app-icon,
 #kendoUiMobileApp .icon-group .app-details {
     display: table-cell;
     vertical-align: top;
+    color: #fff;
 }
 
 #kendoUiMobileApp .icon-group .app-icon {
@@ -97,6 +99,7 @@
 
 #kendoUiMobileApp .icon-group .app-details h4 {
     color: #828282;
+    /*color: #ffffff;*/
     margin-top: 0.5em;
 }
 
@@ -107,6 +110,7 @@
 #kendoUiMobileApp #navigation-container.km-tabstrip .km-button .km-text {
     max-width: 100%;
     word-wrap: break-word;
+    color: #fff;
 }
 
 #kendoUiMobileApp #navigation-container .active {
@@ -122,11 +126,13 @@
 
 #kendoUiMobileApp.km-nova #navigation-container.km-tabstrip .km-button {
     vertical-align: middle;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-nova p {
     margin-left: 1rem;
     margin-right: 1rem;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-nova span.km-switch {
@@ -141,6 +147,7 @@
 #kendoUiMobileApp .unsupported-preview {
     text-align: center;
     margin-top: 12rem;
+    color: #fff;
 }
 
 #kendoUiMobileApp .info-icon {
@@ -153,24 +160,30 @@
 
 #kendoUiMobileApp .editableListItem span {
     float: left;
+    color: #fff;
+
 }
 
 #kendoUiMobileApp .km-content .details-content .editableListItem {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   /* color: #ffffff;*/
 }
 
 #kendoUiMobileApp .km-content .details-content p {
     padding: 1rem;
     margin: 0;
+    color: #ffffff;
 }
 
 #kendoUiMobileApp .km-content .details-content .editableListItem:first-of-type {
     border-top: 0;
+    color: #ffffff;
 }
 
 #kendoUiMobileApp .details-content .editableListItem + .editableListItem {
     border-top: 0;
+    color: #ffffff;
 }
 
 #kendoUiMobileApp .km-content li label:not(.km-label-above) > span:not(.km-widget),
@@ -179,28 +192,33 @@
     word-break: break-word;
     width: 30%;
     padding-right: 10px;
+    color: #fff;
 }
 
 #kendoUiMobileApp .km-content li p {
     margin-left: 0;
     margin-right: 0;
+    color: #fff;
 }
 
 #kendoUiMobileApp .editableListItem {
     overflow: hidden;
     width: 100%;
+    color: #ffffff;
+    
 }
 
 #kendoUiMobileApp.km-nova .details-content {
     font-size: 1.2em;
+    color: #fff;
 }
 
-#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="password"],
-#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="search"],
-#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="number"],
+#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="password"] 
+#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="search"] 
+#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="number"]
 #kendoUiMobileApp .km-list label:not(.km-label-above) input[type="tel"],
 #kendoUiMobileApp .km-list label:not(.km-label-above) input[type="url"],
-#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="email"],
+#kendoUiMobileApp .km-list label:not(.km-label-above) input[type="email"]
 #kendoUiMobileApp .km-list label:not(.km-label-above) input[type="month"],
 #kendoUiMobileApp .km-list label:not(.km-label-above) input[type="color"],
 #kendoUiMobileApp .km-list label:not(.km-label-above) input[type="week"],
@@ -214,6 +232,7 @@
 #kendoUiMobileApp .km-list label:not(.km-label-above) textarea,
 #kendoUiMobileApp .editableListItem > span:last-child {
     min-width: 70%;
+    color: #fff;
 }
 
 
@@ -268,24 +287,27 @@
     position: static;
     margin-left: -0.4rem;
     margin-right: -0.4rem;
-    
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-hidden input:not([type='checkbox']):not([type='radio']),
 #kendoUiMobileApp.km-flat .form-content .form-content-item .km-label-hidden select:not([multiple]) {
     position: absolute;
+    color: #ffffff;
     
 }
 
-#kendoUiMobileApp.km-nova .form-content .form-content-item .km-label-hidden input:not(.k-input):not([type='checkbox']):not([type='radio']),
+#kendoUiMobileApp.km-nova .form-content .form-content-item .km-label-hidden input:not(.k-input):not([type='checkbox']):not([type='radio'])
 #kendoUiMobileApp.km-nova .form-content .form-content-item .km-label-hidden select:not([multiple]) {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-nova .form-content .form-content-item .km-listview-label.km-label-above {
     width: auto;
+    color: #fff;
 }
 
 
@@ -294,19 +316,23 @@
 #kendoUiMobileApp.km-flat .custom-filter input {
     font-size: 1.2em;
     padding: .3em 0 .3em 1.8em;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-flat .km-filter-wrap:before {
     position: absolute;
     top: .25em;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-nova .custom-filter input {
     padding: .5em 0 .5em 1.8em;
+    color: #fff;
 }
 
 #kendoUiMobileApp.km-nova .km-filter-wrap:before {
-    color: #cacdce;
+    color: #cacdce; 
+    /* color: #fff; */
 }
 
 .message {

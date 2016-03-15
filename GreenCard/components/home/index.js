@@ -4,7 +4,8 @@ app.home = kendo.observable({
     onShow: function() {},
     afterShow: function() {},
     login: function() {
-        			navigator.notification.alert("login");
+        			//navigator.notification.alert("login");
+        	app.mobileApp.navigate('components/signin/view.html');
   
     },
      register: function() {

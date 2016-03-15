@@ -1,4 +1,12 @@
-<div data-role="view" data-title="signin" data-layout="main" data-model="app.signin" data-show="app.signin.onShow" data-after-show="app.signin.afterShow">
+<div data-role="view" data-title="" data-layout="main" data-model="app.signin" data-show="app.signin.onShow" data-after-show="app.signin.afterShow">
+    <div style="height:100vh">
+     <table style="width:100%">
+  <tr>
+    <td><img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: signinModel.gohome }"></td> 
+      <td style="float:right;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ลงทะเบียน</span></td>
+  </tr>
+        </table>
+   
     <div id="signinModel" class="form-view">
         <form>
             <ul class="form-content" data-role="listview" data-style="inset">
@@ -30,14 +38,14 @@
                 <a class="primary" data-role="button" data-bind="events: { click: signinModel.submit }">ลงชื่อเข้าใช้</a>
             </div>
         </form>
-        <!-- START_CUSTOM_CODE_signinModel -->
-        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-        <!-- END_CUSTOM_CODE_signinModel -->
     </div>
-
-    <!-- START_CUSTOM_CODE_signin -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_signin -->
+          <table style="width:100%">
+  <tr>
+    <td style="float:left;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ข้อตกลงการใช้งาน</span></td> 
+      <td style="float:right;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.goforgotpass }">ลืมรหัสผ่าน</span></td>
+  </tr>
+        </table>
+        
+        
+</div>
 </div>
