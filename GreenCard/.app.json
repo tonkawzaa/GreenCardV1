@@ -119,6 +119,13 @@
       "title": "forgotpass",
       "addToNavigation": true,
       "icon": "bookmarks"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "information",
+      "components": [],
+      "title": "information",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],

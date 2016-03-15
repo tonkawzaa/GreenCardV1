@@ -50,6 +50,9 @@ app.welcome = kendo.observable({
                 });
             
         },
+        information: function() {
+				app.mobileApp.navigate('components/information/view.html');
+        },
     });
 
     parent.set('welcomeModel', welcomeModel);

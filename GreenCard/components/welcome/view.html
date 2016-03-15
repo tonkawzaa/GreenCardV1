@@ -1,11 +1,19 @@
-<div data-role="view" data-title="welcome" data-layout="main-nonav" data-model="app.welcome" data-show="app.welcome.onShow" data-after-show="app.welcome.afterShow">
+<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.welcome" data-show="app.welcome.onShow" data-after-show="app.welcome.afterShow">
 
-   <p>
-        !!!  welcome !!!
-    </p>
+
     <div class="button-group">
         <a class="primary" data-role="button" data-bind="events: { click: welcomeModel.logout }">logout</a>
         <a data-role="button" data-bind="events: { click: welcomeModel.showtoken }">show token</a>
         <a class="primary" data-role="button" data-bind="events: { click: welcomeModel.viewpoint }">viewPoint</a> 
+    </div>
+    
+    <div style="height:100vh" class="message">
+        <p>
+           ยินดีต้อนรับเข้าสู่
+        </p>
+         <p>
+           Green Card Application
+        </p>
+        <a class="primary" data-role="button" data-bind="events: { click: welcomeModel.information }">ฉลาดซื้อฉลาดเลือก</a></br>
     </div>
 </div>
