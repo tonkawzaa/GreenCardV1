@@ -80,6 +80,13 @@
       "title": "signin",
       "addToNavigation": true,
       "icon": "details"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "welcome",
+      "components": [],
+      "title": "welcome",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],
