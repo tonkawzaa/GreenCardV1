@@ -15,7 +15,28 @@ app.signin = kendo.observable({
             password: 'password',
             email: 'top@gmail.com',
         },
-        submit: function() {},
+        submit: function() {
+            
+            $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/login",
+                        contentType: "application/json",
+                        data: JSON.stringify({ login: signinModel.fields.email,password: signinModel.fields.password }),
+                        success: function(result) {
+                            var token = null ;
+                            localStorage.setItem(token,result.data.access_token);
+                            navigator.notification.alert(result.data.access_token);
+                            app.mobileApp.navigate('components/welcome/view.html');
+                            //token = result.data.access_token;
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result);
+                            
+                        }
+                });
+                
+            
+        },
         gohome: function() {
                 app.mobileApp.navigate('components/home/view.html');
             },
