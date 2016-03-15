@@ -1,6 +1,16 @@
 <div data-role="view" data-title="" data-layout="main" data-model="app.reigister" data-show="app.reigister.onShow" data-after-show="app.reigister.afterShow">
-    <div id="reigisterModel" class="form-view" style="height:100vh">
-        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;">
+    
+    <div  class="signup1-view" style="height:100vh">
+        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.gohome }">
+        <p class="message">
+            ลงทะเบียน
+        </p>
+        <div style="margin:0px auto;display:block;width: 60px;">
+        <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
+        <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
+        <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
+        </div>
+ 
         <form >
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li class="form-content-item">
@@ -38,7 +48,29 @@
 
                 </li>
  
-                <li class="form-content-item">
+                
+            </ul>           
+        </form>
+         <div class="button-group">
+                <a class="primary" data-role="button" data-bind="events: { click: reigisterModel.toggleView }">ถัดไป >>></a>
+            </div>
+    </div>
+    
+    <div  class="signup2-view" style="display:none;height:100vh;">
+        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.toggleView }">
+        <p class="message">
+            ลงทะเบียน
+        </p>
+        <div style="margin:0px auto;display:block;width: 60px;">
+        <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
+        <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
+        <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
+        </div>
+        
+        <form >
+        <ul class="form-content" data-role="listview" data-style="inset">
+            
+            <li class="form-content-item">
 
 
                     <label>
@@ -120,11 +152,10 @@
                         </select>
                     </label>
                 </li>
-            </ul>
-
-            <div class="button-group">
-                <a  data-role="button" data-bind="events: { click: reigisterModel.submit }">ถัดไป >>></a>
-            </div>
+            </ul> 
         </form>
+         <div class="button-group">
+                <a class="primary" data-role="button" >ถัดไป >>></a>
+           </div>
     </div>
 </div>

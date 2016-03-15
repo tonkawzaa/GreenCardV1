@@ -10,6 +10,7 @@ app.reigister = kendo.observable({
 
 // END_CUSTOM_CODE_reigister
 (function(parent) {
+    var  mode = 'signup';
     var token= null ;
     var reigisterModel = kendo.observable({
         fields: {
@@ -24,6 +25,7 @@ app.reigister = kendo.observable({
             firstname: 'firstname',
             email: 'top@gmail.com',
         },
+
         submit: function() {
              $.ajax({
                         type: "POST",
@@ -57,6 +59,15 @@ app.reigister = kendo.observable({
                         }
                 });
         },
+        
+         toggleView: function() {
+                mode = mode === 'signup' ? 'register' : 'signup';
+                var activeView = mode === 'signup' ? '.signup1-view' : '.signup2-view';
+                $(activeView).show().siblings().hide();
+            },
+        gohome: function() {
+                app.mobileApp.navigate('components/home/view.html');
+            },
     });
 
     parent.set('reigisterModel', reigisterModel);

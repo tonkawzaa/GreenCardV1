@@ -12,9 +12,11 @@ app.termsofuse = kendo.observable({
 (function(parent) {
     var termsofuseModel = kendo.observable({
         fields: {},
-        submit: function() {},
+        submit: function() {
+            app.mobileApp.navigate('components/reigister/view.html');
+        },
         cancel: function() {
-            
+            app.mobileApp.navigate('components/home/view.html');
         }
     });
 

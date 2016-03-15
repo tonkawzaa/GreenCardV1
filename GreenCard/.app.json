@@ -48,6 +48,38 @@
       "title": "reigister",
       "addToNavigation": true,
       "icon": "bookmarks"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "signin",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "email",
+              "title": "อีเมล์ของคุณ",
+              "inputType": "email",
+              "titlePosition": "left",
+              "placeholder": "อีเมล์ของคุณ"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "password",
+              "title": "รหัสผ่าน",
+              "inputType": "password",
+              "titlePosition": "left",
+              "placeholder": "รหัสผ่าน"
+            }
+          ],
+          "name": "signinModel",
+          "submitButton": "ลงชื่อเข้าใช้"
+        }
+      ],
+      "title": "signin",
+      "addToNavigation": true,
+      "icon": "details"
     }
   ],
   "dataProviders": [],
