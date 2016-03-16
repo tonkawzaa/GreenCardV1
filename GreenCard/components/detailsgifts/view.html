@@ -1,0 +1,27 @@
+<div data-role="view" data-title="detailsgifts" data-layout="main-nonav" data-model="app.detailsgifts" data-show="app.detailsgifts.onShow" data-after-show="app.detailsgifts.afterShow">
+
+    <div  class="details-view" style="height:100vh">
+    <div id="data2Content" >  
+        id = <span data-bind="text: id"></span></br>
+    	name = <span data-bind="text: name"></span></br>
+	</div>        
+        
+	<div id="divshowimage" >
+   	<img data-bind="attr: { src: image_mobile }" />
+	</div>
+
+	<div id="submitfunc" class="form-view">
+        <form>
+			<div class="button-group">
+                <a data-role="button" data-transition="slide" data-bind="events: { click: cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: submit }">ตกลง</a>
+            </div>
+       </form>
+  	</div>
+    </div>
+
+    <div  class="sumit-view" style="height:100vh;display:none;">
+        !! sumit-view !!
+    </div>
+
+</div>

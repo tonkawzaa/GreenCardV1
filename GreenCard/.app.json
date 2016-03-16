@@ -140,6 +140,13 @@
       "components": [],
       "title": "BurnPoint",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "detailsgifts",
+      "components": [],
+      "title": "detailsgifts",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],
