@@ -1,6 +1,35 @@
-<div data-role="view" data-title="information" data-layout="main-nonav" data-model="app.information" data-show="app.information.onShow" data-after-show="app.information.afterShow">
+<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.information" data-show="app.information.onShow" data-after-show="app.information.afterShow">
 
-   <p>
-       information !!!
+   <div class="message">
+    <p>
+       ฉลาดซื้อฉลาดเลือก
     </p>
+
+   <ul data-role="listview" data-source="app.information.data" data-template="books-template"></ul>
+        
+    
+
+    <script type="text/x-kendo-template" id="books-template">
+    <p> #: name # </p>
+    <table>
+    <tr>
+    	<td>
+        <img  src="data:image/png;base64,#: image_medium #" />
+        </td>
+        <td>
+        id = #: id # <br>
+            points = #: points # 
+        </td>
+    </tr>
+    </table>
+           
+            
+           
+     </script>
+       
+   
+
+    </div>
+    
+    
 </div>

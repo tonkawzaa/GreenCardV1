@@ -20,8 +20,30 @@
   	</div>
     </div>
 
-    <div  class="sumit-view" style="height:100vh;display:none;">
-        !! sumit-view !!
+    <div  class="sumit-view" style="height:100vh;display:none;" class="message">
+        <div id="sumitshowimage" >
+   			<img data-bind="attr: { src: image_mobile }" />
+		</div>
+        
+         <div id="sumitContent" >  
+    	 <span data-bind="text: name"></span></br>
+		</div>
+
+        <br>
+		<br>
+		<br>
+
+		<div id="sumitgift_code" >  
+    	 <span data-bind="text: gift_code"></span></br>
+		</div>
+		
+		<p> กรุณาแสดงรหัสนี้ให้กับร้านค้าเพื่อใช้สิทธิ์ </p>
+		<p>  ขอบคุณ  </p>
+        
+		<div id="close_func" class="form-view">
+		<a class="primary" data-role="button" data-bind="events: { click: close_func }">ตกลง</a>
+		</div>
+
     </div>
 
 </div>

@@ -1,9 +1,22 @@
-<div data-role="view" data-title="BurnPoint" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
+<div data-role="view" data-stretch="true" data-title="BurnPoint" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
 
-    <ul data-role="listview" data-source="app.burnPoint.data" data-template="books-template"></ul>
-        
     
+  	<div data-role="scrollview"
+    data-auto-bind="false"
+    data-source="app.burnPoint.dataSource"
+    data-template="scrollview-template"
+    data-content-height="120px"
+    data-enable-pager="false">
+  	</div>
+	
 
+<script id="scrollview-template" type="text/x-kendo-template">
+  <p>#= ProductName #</p>
+</script>
+
+    
+    <!--
+    <ul data-role="listview" data-source="app.burnPoint.data" data-template="books-template"></ul>
 
     <script type="text/x-kendo-template" id="books-template">
         <a href="components/detailsgifts/view.html?id=#: id #">
@@ -14,4 +27,5 @@
             <div>#: name #</div>
         </a>
      </script>
+   -->
 </div>
