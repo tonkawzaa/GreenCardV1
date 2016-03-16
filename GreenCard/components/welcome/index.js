@@ -53,6 +53,12 @@ app.welcome = kendo.observable({
         information: function() {
 				app.mobileApp.navigate('components/information/view.html');
         },
+         earn: function() {
+				app.mobileApp.navigate('components/earn/view.html');
+        }, 
+        burnPoint: function() {
+				app.mobileApp.navigate('components/burnPoint/view.html');
+        },
     });
 
     parent.set('welcomeModel', welcomeModel);

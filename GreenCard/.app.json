@@ -126,6 +126,20 @@
       "components": [],
       "title": "information",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "earn",
+      "components": [],
+      "title": "Earn",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "burnPoint",
+      "components": [],
+      "title": "BurnPoint",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],
