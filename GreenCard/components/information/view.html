@@ -1,5 +1,12 @@
 <div data-role="view" data-title="" data-layout="main-nonav" data-model="app.information" data-show="app.information.onShow" data-after-show="app.information.afterShow">
 
+    <div class="button-group">
+    <a class="primary" data-role="button" data-bind="events: { click: informationModel.information }">ฉลาดซื้อฉลาดเลือก</a>
+    <a class="primary" data-role="button" data-bind="events: { click: informationModel.earn }">สะสมคะแนน</a>
+    <a class="primary" data-role="button" data-bind="events: { click: informationModel.burnPoint }">รับสิทธิ์</a>
+	</div>
+
+
    <div class="message">
     <p>
        ฉลาดซื้อฉลาดเลือก

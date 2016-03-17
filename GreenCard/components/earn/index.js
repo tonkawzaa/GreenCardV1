@@ -5,7 +5,21 @@ app.earn = kendo.observable({
     afterShow: function() {}
 });
 
-// START_CUSTOM_CODE_earn
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+(function(parent) {
 
-// END_CUSTOM_CODE_earn
+    var earnModel = kendo.observable({
+       
+        information: function() {
+				app.mobileApp.navigate('components/information/view.html');
+        },
+         earn: function() {
+				app.mobileApp.navigate('components/earn/view.html');
+        }, 
+        burnPoint: function() {
+				app.mobileApp.navigate('components/burnPoint/view.html');
+        },
+       
+    });
+
+    parent.set('earnModel', earnModel);
+})(app.earn);

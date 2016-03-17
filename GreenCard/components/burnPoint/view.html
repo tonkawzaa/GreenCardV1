@@ -1,31 +1,27 @@
-<div data-role="view" data-stretch="true" data-title="BurnPoint" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
+<div data-role="view"  data-title="BurnPoint" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
 
+      <div class="button-group">
+    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.information }">ฉลาดซื้อฉลาดเลือก</a>
+    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</a>
+    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</a>
+	</div>
     
-  	<div data-role="scrollview"
-    data-auto-bind="false"
-    data-source="app.burnPoint.dataSource"
-    data-template="scrollview-template"
-    data-content-height="120px"
-    data-enable-pager="false">
-  	</div>
-	
+        <div data-role="scrollview"
+        data-source="app.burnPoint.data"
+        data-template="books-template"
+        data-content-height="300px">
+    	</div>
 
-<script id="scrollview-template" type="text/x-kendo-template">
-  <p>#= ProductName #</p>
-</script>
-
-    
-    <!--
-    <ul data-role="listview" data-source="app.burnPoint.data" data-template="books-template"></ul>
+    <ul data-role="listview" data-source="app.burnPoint.data2" data-template="books-template"></ul>
 
     <script type="text/x-kendo-template" id="books-template">
         <a href="components/detailsgifts/view.html?id=#: id #">
             <div>#: required_points #</div>
             <div>#: id #</div>
             <div>#: end_date #</div>
-            <div><img style="width:100%;" src="data:image/png;base64,#: image_mobile #" /></div>
+            <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
             <div>#: name #</div>
         </a>
      </script>
-   -->
+   
 </div>
