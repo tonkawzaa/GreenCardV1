@@ -1,11 +1,48 @@
 'use strict';
 
 app.earn = kendo.observable({
-    onShow: function() {},
+    
+    scan: function() {
+            cordova.plugins.barcodeScanner.scan(
+                function(result) {
+                    //navigator.notification.alert(result.text);
+                    var navi_parameters = "components/detailsproducts/view.html?id="+result.text;
+                   app.mobileApp.navigate(navi_parameters);
+                }, 
+                function(error) {
+                    	navigator.notification.alert(error);
+                });
+        },
+    
+    onShow: function() {
+        
+        var point = null;
+            var header_token = null;
+            
+           	var token = null;
+        	token = localStorage.getItem(token);
+            header_token =  "Bearer "+token;
+            //navigator.notification.alert(header_token);
+            $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        contentType: "application/json",
+                		headers: {'Authorization' : header_token},
+                        success: function(result) {                
+                            //navigator.notification.alert(result.data);
+                            kendo.bind($("#headerGreen"),result);  
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                        }
+                });
+      
+    },
     afterShow: function() {}
 });
 
 (function(parent) {
+    
 
     var earnModel = kendo.observable({
        

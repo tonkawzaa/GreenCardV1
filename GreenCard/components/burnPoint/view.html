@@ -1,18 +1,41 @@
-<div data-role="view"  data-title="BurnPoint" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
+<div data-role="view"  data-title="BurnPoint" data-reload="true" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
 
+    <div id = "headerGreen">
+    <table style="width:100%">
+    <tr>
+    	<td>
+        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"> คะแนนสะสม  <br></span>
+              <span class="form_reg" data-bind="text: data"></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="2">
+        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+    
       <div class="button-group">
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.information }">ฉลาดซื้อฉลาดเลือก</a>
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</a>
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</a>
+    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.destroyListView }">destroyListView</a>
 	</div>
     
         <div data-role="scrollview"
         data-source="app.burnPoint.data"
         data-template="books-template"
-        data-content-height="300px">
+        data-content-height="300px"
+        id="scrollview">
     	</div>
 
-    <ul data-role="listview" data-source="app.burnPoint.data2" data-template="books-template"></ul>
+    <ul data-role="listview" id="listview" data-source="app.burnPoint.data2" data-template="books-template"></ul>
 
     <script type="text/x-kendo-template" id="books-template">
         <a href="components/detailsgifts/view.html?id=#: id #">

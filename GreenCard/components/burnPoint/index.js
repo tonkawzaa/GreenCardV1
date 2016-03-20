@@ -39,11 +39,34 @@ app.burnPoint = kendo.observable({
     }),
     
     
-    onShow: function() {},
+    onShow: function() {
+         var point = null;
+            var header_token = null;
+            
+           	var token = null;
+        	token = localStorage.getItem(token);
+            header_token =  "Bearer "+token;
+            //navigator.notification.alert(header_token);
+            $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        contentType: "application/json",
+                		headers: {'Authorization' : header_token},
+                        success: function(result) {                
+                            //navigator.notification.alert(result.data);
+                            kendo.bind($("#headerGreen"),result);
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                        }
+                });
+      
+    },
     afterShow: function() {}
 });
 
 (function(parent) {
+    
 
     var burnPointModel = kendo.observable({
        
@@ -55,6 +78,9 @@ app.burnPoint = kendo.observable({
         }, 
         burnPoint: function() {
 				app.mobileApp.navigate('components/burnPoint/view.html');
+        },
+        destroyListView: function() {
+            	navigator.notification.alert("destroyListView");
         },
        
     });

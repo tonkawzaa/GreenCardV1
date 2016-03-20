@@ -1,9 +1,38 @@
-<div data-role="view" data-title="Earn" data-layout="main-nonav" data-model="app.earn" data-show="app.earn.onShow" data-after-show="app.earn.afterShow">
+<div data-role="view" data-title="" data-reload="true" data-layout="main-nonav" data-model="app.earn" data-show="app.earn.onShow" data-after-show="app.earn.afterShow">
 
-          <div class="button-group">
+    <div id = "headerGreen">
+    <table style="width:100%">
+    <tr>
+    	<td>
+        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"> คะแนนสะสม  <br></span>
+              <span class="form_reg" data-bind="text: data"></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="2">
+        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+        
+    <div class="button-group">
     <a class="primary" data-role="button" data-bind="events: { click: earnModel.information }">ฉลาดซื้อฉลาดเลือก</a>
     <a class="primary" data-role="button" data-bind="events: { click: earnModel.earn }">สะสมคะแนน</a>
     <a class="primary" data-role="button" data-bind="events: { click: earnModel.burnPoint }">รับสิทธิ์</a>
 	</div>
-   +++ EARN !!!!!
+    
+        
+    
+        <img  src="images/barcode.png" style="margin:10px auto;display:block;width: 45%; height: auto;" />
+        
+    <div id="scanview" class="message"> 
+		<a class="primary" data-role="button" data-bind="events: { click: scan }">scan</a>
+  	</div> 
+    
 </div>

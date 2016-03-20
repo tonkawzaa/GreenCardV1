@@ -1,5 +1,25 @@
-<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.information" data-show="app.information.onShow" data-after-show="app.information.afterShow">
-
+<div data-role="view" data-title="" data-reload="true" data-layout="main-nonav" data-model="app.information" data-show="app.information.onShow" data-after-show="app.information.afterShow">
+	<div id = "headerGreen">
+    <table style="width:100%">
+    <tr>
+    	<td>
+        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"> คะแนนสะสม  <br></span>
+              <span class="form_reg" data-bind="text: data"></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="2">
+        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+    
     <div class="button-group">
     <a class="primary" data-role="button" data-bind="events: { click: informationModel.information }">ฉลาดซื้อฉลาดเลือก</a>
     <a class="primary" data-role="button" data-bind="events: { click: informationModel.earn }">สะสมคะแนน</a>
@@ -25,7 +45,7 @@
         </td>
         <td>
         id = #: id # <br>
-            points = #: points # 
+        points = #: points # 
         </td>
     </tr>
     </table>

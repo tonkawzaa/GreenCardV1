@@ -147,6 +147,13 @@
       "components": [],
       "title": "detailsgifts",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "detailsproducts",
+      "components": [],
+      "title": "detailsproducts",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],

@@ -1,0 +1,43 @@
+<div data-role="view" data-title="detailsproducts" data-layout="main-nonav" data-model="app.detailsproducts" data-show="app.detailsproducts.onShow" data-after-show="app.detailsproducts.afterShow">
+
+    <div id = "headerGreen">
+    <table style="width:100%">
+    <tr>
+    	<td>
+        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"> คะแนนสะสม  <br></span>
+              <span class="form_reg" data-bind="text: data"></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="2">
+        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+        
+    <div class="button-group" id = "manubar">
+    <a class="primary" data-role="button" data-bind="events: { click: information }">ฉลาดซื้อฉลาดเลือก</a>
+    <a class="primary" data-role="button" data-bind="events: { click: earn }">สะสมคะแนน</a>
+    <a class="primary" data-role="button" data-bind="events: { click: burnPoint }">รับสิทธิ์</a>
+	</div>
+    
+    <script id="tmp" type="text/x-kendo-template">
+            <p>#: name # </p>
+            <img src="data:image/png;base64,#: image_small #" />
+           </script>
+
+    <div id="scrollView"></div>
+    
+    
+    
+        <div id="view1" >
+            <span data-bind="text: id"></span></br>
+    		<span data-bind="text: name"></span></br>
+        </div>
+</div>
