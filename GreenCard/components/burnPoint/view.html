@@ -30,9 +30,10 @@
     
         <div data-role="scrollview"
         data-source="app.burnPoint.data"
-        data-template="books-template"
+        data-template="scrollview-template"
         data-content-height="300px"
-        id="scrollview">
+        id="scrollview" 
+        data-click="burnPointModel.scrollviewClick">
     	</div>
 
     <ul data-role="listview" id="listview" data-source="app.burnPoint.data2" data-template="books-template"></ul>
@@ -45,6 +46,13 @@
             <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
             <div>#: name #</div>
         </a>
+     </script>
+    
+     <script type="text/x-kendo-template" id="scrollview-template">
+          
+            <div>#: id #</div>
+            <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
+        
      </script>
    
 </div>

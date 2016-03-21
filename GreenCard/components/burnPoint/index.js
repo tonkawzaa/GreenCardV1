@@ -82,6 +82,9 @@ app.burnPoint = kendo.observable({
         destroyListView: function() {
             	navigator.notification.alert("destroyListView");
         },
+        scrollviewClick: function() {
+            	navigator.notification.alert("scrollviewClick");
+        },
        
     });
 

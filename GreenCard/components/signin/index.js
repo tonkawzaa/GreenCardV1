@@ -25,7 +25,7 @@ app.signin = kendo.observable({
                         success: function(result) {
                             var token = null ;
                             localStorage.setItem("token",result.data.access_token);
-                            navigator.notification.alert(result.data.access_token);
+                            //navigator.notification.alert(result.data.access_token);
                             app.mobileApp.navigate('components/welcome/view.html');
                             //token = result.data.access_token;
                         },

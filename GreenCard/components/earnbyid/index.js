@@ -1,28 +1,8 @@
 'use strict';
 
-app.earn = kendo.observable({
-    
-    scan: function() {
-            cordova.plugins.barcodeScanner.scan(
-                function(result) {
-                    //navigator.notification.alert(result.text);
-                    var navi_parameters = "components/detailsproducts/view.html?id="+result.text;
-                   app.mobileApp.navigate(navi_parameters);
-                }, 
-                function(error) {
-                    	navigator.notification.alert(error);
-                });
-        },
-    earnbyid: function() {
-        
-                //navigator.notification.alert("earnbyid");
-                app.mobileApp.navigate("components/earnbyid/view.html");
-        },
-    
+app.earnbyid = kendo.observable({
     onShow: function() {
-        
-        
-            var header_token = null;
+         var header_token = null;
             
            	var token = null;
         	token = localStorage.getItem("token");
@@ -49,7 +29,7 @@ app.earn = kendo.observable({
 (function(parent) {
     
 
-    var earnModel = kendo.observable({
+    var earnbyidModel = kendo.observable({
        
         information: function() {
 				app.mobileApp.navigate('components/information/view.html');
@@ -63,5 +43,9 @@ app.earn = kendo.observable({
        
     });
 
-    parent.set('earnModel', earnModel);
-})(app.earn);
+    parent.set('earnbyidModel', earnbyidModel);
+})(app.earnbyid);
+// START_CUSTOM_CODE_earnby
+// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+
+// END_CUSTOM_CODE_earnby

@@ -154,6 +154,13 @@
       "components": [],
       "title": "detailsproducts",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "earnby",
+      "components": [],
+      "title": "earnbyID",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],

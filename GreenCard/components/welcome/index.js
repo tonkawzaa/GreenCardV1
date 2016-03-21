@@ -1,7 +1,30 @@
 'use strict';
 
 app.welcome = kendo.observable({
-    onShow: function() {},
+    onShow: function() {
+        var header_token = null;
+            
+        var token = null;
+        	token = localStorage.getItem("token");
+            header_token =  "Bearer "+token;
+            //navigator.notification.alert(header_token);
+            $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        contentType: "application/json",
+                		headers: {'Authorization' : header_token},
+                        success: function(result) {
+                            
+                            navigator.notification.alert(result.data);
+                            
+                     
+                        },
+                        error: function() {
+                            navigator.notification.alert(result);
+                            
+                        }
+                });
+    },
     afterShow: function() {}
 });
 (function(parent) {
@@ -25,7 +48,6 @@ app.welcome = kendo.observable({
             navigator.notification.alert(token);
         },
         viewpoint: function() {
-            var point = null;
             var header_token = null;
             
             token = null;
@@ -39,12 +61,17 @@ app.welcome = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {
                             
-                            navigator.notification.alert(result.data);
-                            
+                           
+                            localStorage.setItem("point",result.data);
+                            /*
+                             var point = null;
+        	                    point = localStorage.getItem("point");
+                                navigator.notification.alert(point);
+                            */
                      
                         },
                         error: function() {
-                            navigator.notification.alert("Unfortunately,");
+                            navigator.notification.alert(result);
                             
                         }
                 });

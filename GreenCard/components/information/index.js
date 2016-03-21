@@ -29,6 +29,7 @@ app.information = kendo.observable({
     
     onShow: function() {
         
+      
             var header_token = null;
             
            	var token = null;

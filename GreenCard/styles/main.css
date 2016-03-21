@@ -370,6 +370,81 @@
   } 
 
 
+.circle-of-fifths {
+  font-family: 'Volkhov';
+  font-size: 3.75vw;
+ 
+  height: 50vw;
+
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+
+}
+.key {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.key > * {
+  position: absolute;
+}
+
+.key:nth-child(1) {
+  -webkit-transform: translate(0vw, -24.75vw);
+          transform: translate(0vw, -24.75vw);
+}
+.key:nth-child(2) {
+  -webkit-transform: translate(12.375vw, -21.43412874vw);
+          transform: translate(12.375vw, -21.43412874vw);
+}
+.key:nth-child(3) {
+  -webkit-transform: translate(21.43412874vw, -12.375vw);
+          transform: translate(21.43412874vw, -12.375vw);
+}
+.key:nth-child(4) {
+  -webkit-transform: translate(24.75vw, 0vw);
+          transform: translate(24.75vw, 0vw);
+}
+.key:nth-child(5) {
+  -webkit-transform: translate(21.43412874vw, 12.375vw);
+          transform: translate(21.43412874vw, 12.375vw);
+}
+.key:nth-child(6) {
+  -webkit-transform: translate(12.375vw, 21.43412874vw);
+          transform: translate(12.375vw, 21.43412874vw);
+}
+.key:nth-child(7) {
+  -webkit-transform: translate(0vw, 24.75vw);
+          transform: translate(0vw, 24.75vw);
+}
+.key:nth-child(8) {
+  -webkit-transform: translate(-12.375vw, 21.43412874vw);
+          transform: translate(-12.375vw, 21.43412874vw);
+}
+.key:nth-child(9) {
+  -webkit-transform: translate(-21.43412874vw, 12.375vw);
+          transform: translate(-21.43412874vw, 12.375vw);
+}
+.key:nth-child(10) {
+  -webkit-transform: translate(-24.75vw, 0vw);
+          transform: translate(-24.75vw, 0vw);
+}
+.key:nth-child(11) {
+  -webkit-transform: translate(-21.43412874vw, -12.375vw);
+          transform: translate(-21.43412874vw, -12.375vw);
+}
+.key:nth-child(12) {
+  -webkit-transform: translate(-12.375vw, -21.43412874vw);
+          transform: translate(-12.375vw, -21.43412874vw);
+}
+
+
+
+
 /* START_CUSTOM_CODE_kendoUiMobileApp */
 
 
