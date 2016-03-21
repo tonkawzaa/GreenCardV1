@@ -15,13 +15,13 @@ app.welcome = kendo.observable({
             //localStorage.removeItem(token);
             localStorage.clear();
             
-        	token = localStorage.getItem(token);
+        	token = localStorage.getItem("token");
             navigator.notification.alert(token);
         },
         showtoken: function() {
             //localStorage.removeItem(token);
             token = null;
-        	token = localStorage.getItem(token);
+        	token = localStorage.getItem("token");
             navigator.notification.alert(token);
         },
         viewpoint: function() {
@@ -29,7 +29,7 @@ app.welcome = kendo.observable({
             var header_token = null;
             
             token = null;
-        	token = localStorage.getItem(token);
+        	token = localStorage.getItem("token");
             header_token =  "Bearer "+token;
             //navigator.notification.alert(header_token);
             $.ajax({

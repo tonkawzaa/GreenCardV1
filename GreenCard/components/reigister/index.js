@@ -48,7 +48,7 @@ app.reigister = kendo.observable({
                             
                             token = null ;
                             localStorage.clear();
-                            localStorage.setItem(token,result.data.access_token);
+                            localStorage.setItem("token",result.data.access_token);
                             navigator.notification.alert(result.data.access_token);
                             //token = result.data.access_token;
                             app.mobileApp.navigate('components/reigister/success.html');

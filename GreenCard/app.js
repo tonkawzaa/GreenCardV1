@@ -11,9 +11,9 @@
             
             var token,page_start;
             token = null;
-        	token = localStorage.getItem(token);
+        	token = localStorage.getItem("token");
             
-            if(token!=null){
+            if(token != null){
             	page_start = 'components/welcome/view.html';
             }else{
                	page_start = 'components/home/view.html';

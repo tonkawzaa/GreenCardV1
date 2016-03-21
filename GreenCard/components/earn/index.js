@@ -16,11 +16,11 @@ app.earn = kendo.observable({
     
     onShow: function() {
         
-        var point = null;
+        
             var header_token = null;
             
            	var token = null;
-        	token = localStorage.getItem(token);
+        	token = localStorage.getItem("token");
             header_token =  "Bearer "+token;
             //navigator.notification.alert(header_token);
             $.ajax({
