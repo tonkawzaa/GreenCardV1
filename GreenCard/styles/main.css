@@ -371,15 +371,9 @@
 
 
 .circle-of-fifths {
-  font-family: 'Volkhov';
-  font-size: 3.75vw;
- 
-  height: 50vw;
 
-  margin: auto;
-  border-radius: 50%;
+  height: 50vw;
   position: relative;
-  box-sizing: border-box;
 
 }
 .key {
@@ -442,6 +436,89 @@
           transform: translate(-12.375vw, -21.43412874vw);
 }
 
+.begincircle
+{  
+ position: relative; 
+}
+
+.circle1
+{  
+  position: absolute;
+  top: 2vw;
+  left: 50%;
+}
+.circle2
+{
+  position: absolute;
+  top: 5vw;
+  left: 62.5%;
+}
+.circle3
+{
+  position: absolute;
+  top: 14.5vw;
+  left: 71.5%;
+}
+.circle4
+{
+  position: absolute;
+  top: 26vw;
+  left: 74.5%;
+}
+.circle5
+{
+  position: absolute;
+  top: 39vw;
+  left: 71.5%;
+}
+.circle6
+{
+  position: absolute;
+  top: 48vw;
+  left: 62.5%;
+}
+.circle7
+{
+  position: absolute;
+  top: 51vw;
+  left: 50%;
+}
+.circle12
+{
+  position: absolute;
+  top: 5vw;
+  left: 36.5%;
+}
+.circle11
+{
+  position: absolute;
+  top: 14vw;
+  left: 27%;
+}
+.circle10
+{
+  position: absolute;
+  top: 26vw;
+  left: 24%;
+}
+.circle9
+{
+  position: absolute;
+  top: 39vw;
+  left: 28%;
+}
+.circle8
+{
+  position: absolute;
+  top: 48vw;
+  left: 36.5%;
+}
+.circletext
+{
+  position: absolute;
+  top: 26vw;
+  left: 50%;
+}
 
 
 
