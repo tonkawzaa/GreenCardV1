@@ -38,9 +38,19 @@ app.burnPoint = kendo.observable({
             },
     }),
     
+        data3 : new kendo.data.DataSource({
+        type: "odata",
+        transport: {
+            read: {
+                url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+            }
+        },
+    }),
+    
     
     onShow: function() {
          
+            
             var header_token = null;
             
            	var token = null;
@@ -54,12 +64,20 @@ app.burnPoint = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {                
                             //navigator.notification.alert(result.data);
-                            kendo.bind($("#headerGreen"),result);
+                            
+                            //result.set("data","55555" );
+                            
+                            kendo.unbind($("#headerburnPoint"));
+                               kendo.bind($("#headerburnPoint"),result);
+                            
+                            
+                            
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
                         }
                 });
+        
       
     },
     afterShow: function() {}

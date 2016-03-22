@@ -1,6 +1,8 @@
 'use strict';
 
 app.detailsproducts = kendo.observable({
+    shops:"TOP",
+    
     onShow: function(e) {
         var item = e.view.params.id;
         //navigator.notification.alert(item);
@@ -50,7 +52,35 @@ app.detailsproducts = kendo.observable({
                             navigator.notification.alert(result);    
                         }
                 });
-        
+         
+         var confirmsdata = {
+                confirms: function() {
+                    
+                    navigator.notification.alert(item);
+                    navigator.notification.alert(shops);
+                    /*
+                  $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        contentType: "application/json",
+                		headers: {'Authorization' : header_token},
+                        data: JSON.stringify({ product_id: item ,
+                                               shop_id : 1, }),
+                        success: function(result) {                
+                            navigator.notification.alert(result);
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                        }
+                    });
+                    */
+                },
+             gotoearn : function() {
+                 app.mobileApp.navigate('components/earn/view.html');
+                 },
+        };
+        kendo.bind($('#confirms_earn'),confirmsdata);
+        kendo.bind($('#selectshops'),confirmsdata);
       
     },
     afterShow: function() {},

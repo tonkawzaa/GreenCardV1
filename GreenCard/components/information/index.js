@@ -25,6 +25,15 @@ app.information = kendo.observable({
         }
     }),
     
+    data2 : new kendo.data.DataSource({
+        type: "odata",
+        transport: {
+            read: {
+                url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+            }
+        },
+    }),
+    
    
     
     onShow: function() {
@@ -43,12 +52,15 @@ app.information = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {                
                             //navigator.notification.alert(result.data);
-                            kendo.bind($("#headerGreen"),result);
+                            kendo.unbind($("#headerinformation"));
+                               kendo.bind($("#headerinformation"),result);
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
                         }
                 });
+       
+        
     },
     afterShow: function() {}
     

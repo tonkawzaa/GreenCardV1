@@ -4,7 +4,7 @@
     <table style="width:100%">
     <tr>
     	<td>
-        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+            <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
         </td>
         <td style="float:right;margin:10px 10px;">
         
@@ -22,22 +22,42 @@
     </div>
         
     <div class="button-group" id = "manubar">
-    <a class="primary" data-role="button" data-bind="events: { click: information }">ฉลาดซื้อฉลาดเลือก</a>
-    <a class="primary" data-role="button" data-bind="events: { click: earn }">สะสมคะแนน</a>
-    <a class="primary" data-role="button" data-bind="events: { click: burnPoint }">รับสิทธิ์</a>
+        <a class="primary" data-role="button" data-bind="events: { click: information }">ฉลาดซื้อฉลาดเลือก</a>
+        <a class="primary" data-role="button" data-bind="events: { click: earn }">สะสมคะแนน</a>
+        <a class="primary" data-role="button" data-bind="events: { click: burnPoint }">รับสิทธิ์</a>
 	</div>
     
     <script id="tmp" type="text/x-kendo-template">
             <p>#: name # </p>
             <img src="data:image/png;base64,#: image_small #" />
-           </script>
+    </script>
 
     <div id="scrollView"></div>
     
     
     
-        <div id="view1" >
-            <span data-bind="text: id"></span><br>
-    		<span data-bind="text: name"></span><br>
-        </div>
+     <div id="view1" >
+         <span data-bind="text: id"></span><br>
+         <span data-bind="text: name"></span><br>
+     </div>
+    
+    
+        
+    
+    
+    <div id = "confirms_earn">
+       <span  class="form_reg"> กรุณาระบุร้าน:</span>
+
+                        <select data-bind="value: shops" data-role="dropdownlist">
+                            <option value="0">Makro</option>
+                            <option value="1">Tops</option>
+                            <option value="2">Gourmet</option>
+                            <option value="3">Watsons</option>
+                        </select>
+        
+      <br>
+      <a class="primary" data-role="button" data-bind="events: { click: confirms }">ยืนยันสิทธิ์</a>
+      <a class="primary" data-role="button" data-bind="events: { click: gotoearn }">ยกเลิก</a>
+	</div>
+    
 </div>

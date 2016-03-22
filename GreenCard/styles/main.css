@@ -372,7 +372,7 @@
 
 .circle-of-fifths {
 
-  height: 50vw;
+  height: 100vw;
   position: relative;
 
 }
@@ -513,11 +513,11 @@
   top: 48vw;
   left: 36.5%;
 }
-.circletext
+.circle2text
 {
   position: absolute;
-  top: 26vw;
-  left: 50%;
+  top: 28vw;
+  left: 43%;
 }
 
 

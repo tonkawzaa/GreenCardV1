@@ -1,6 +1,6 @@
 <div data-role="view"  data-title="BurnPoint" data-reload="true" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
 
-    <div id = "headerGreen">
+    <div id = "headerburnPoint">
     <table style="width:100%">
     <tr>
     	<td>
@@ -9,7 +9,7 @@
         <td style="float:right;margin:10px 10px;">
         
             <span class="form_reg"> คะแนนสะสม  <br></span>
-              <span class="form_reg" data-bind="text: data"></span>
+              <span class="form_reg" data-bind=" text: data"></span>
             
         </td>
     </tr>
@@ -25,9 +25,8 @@
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.information }">ฉลาดซื้อฉลาดเลือก</a>
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</a>
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</a>
-    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.destroyListView }">destroyListView</a>
 	</div>
-    
+    <!--
         <div data-role="scrollview"
         data-source="app.burnPoint.data"
         data-template="scrollview-template"
@@ -54,5 +53,14 @@
             <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
         
      </script>
+    -->
+    
+    <ul data-role="listview" data-source="app.burnPoint.data3" data-template="data2-template"></ul>
+    
+<script id="data2-template" type="text/x-kendo-template">
+    
+  <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
+  <p>#= ProductName #</p>
+</script>
    
 </div>
