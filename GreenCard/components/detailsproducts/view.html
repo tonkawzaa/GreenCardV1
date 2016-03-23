@@ -1,6 +1,6 @@
 <div data-role="view" data-title="detailsproducts" data-layout="main-nonav" data-model="app.detailsproducts" data-show="app.detailsproducts.onShow" data-after-show="app.detailsproducts.afterShow">
 
-    <div id = "headerGreen">
+    <div id = "headerdetailsproducts">
     <table style="width:100%">
     <tr>
     	<td>
@@ -29,10 +29,14 @@
     
     <script id="tmp" type="text/x-kendo-template">
             <p>#: name # </p>
-            <img src="data:image/png;base64,#: image_small #" />
     </script>
-
-    <div id="scrollView"></div>
+    <!--
+      <script id="tmp" type="text/x-kendo-template">
+            <p>#: name # </p>
+            <img src="data:image/png;base64,#: image_small #" /> 
+    </script>
+-->
+    <div id="scrollView"></div> 
     
     
     
@@ -42,20 +46,22 @@
      </div>
     
     
-        
+          <a data-align="right" href="#popover-location" data-rel="popover" data-role="button">เลือกร้านค้า</a>
+     
+     <div data-role="popover" id="popover-location" data-popup='{"width": "30em","hight": "20em"}'>
+        <div data-role="view">
+            <div id="radioshop" data-role="listview" data-bind="source:shopData" data-template="shop-template"></div>
+         </div>
+    </div>
+     
+     <script id="shop-template" type="text/x-kendo-tmpl">
+            <label>
+             <input type="radio" name="fruit" data-bind="value:name,checked: selectedfruit"/><span data-bind="text: name"></span>
+            </label>
+    </script>   
     
     
     <div id = "confirms_earn">
-       <span  class="form_reg"> กรุณาระบุร้าน:</span>
-
-                        <select data-bind="value: shops" data-role="dropdownlist">
-                            <option value="0">Makro</option>
-                            <option value="1">Tops</option>
-                            <option value="2">Gourmet</option>
-                            <option value="3">Watsons</option>
-                        </select>
-        
-      <br>
       <a class="primary" data-role="button" data-bind="events: { click: confirms }">ยืนยันสิทธิ์</a>
       <a class="primary" data-role="button" data-bind="events: { click: gotoearn }">ยกเลิก</a>
 	</div>

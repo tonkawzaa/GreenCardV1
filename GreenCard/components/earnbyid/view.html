@@ -1,5 +1,5 @@
 <div data-role="view" data-title="" data-layout="main-nonav" data-model="app.earnbyid" data-show="app.earnbyid.onShow" data-after-show="app.earnbyid.afterShow">
-      <div id = "headerGreen">
+      <div id = "headerearnbyid">
     <table style="width:100%">
     <tr>
     	<td>
@@ -67,9 +67,9 @@
     </div>
     -->
     
-    <div class="begincircle">
-        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" /></div>
+    <div id ="menumain" class="begincircle">
+        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" data-bind="events: { click: earnbyidModel.clickedImage }" /></div>
+        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" onclick="earnbyidModel.clickedImage()"/></div>
         <div class="circle3"><img  src="keyin_image/icon-keyin03-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle4"><img  src="keyin_image/icon-keyin04-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle5"><img  src="keyin_image/icon-keyin05-on.png" style="width: 45px; height: auto;" /></div>
@@ -83,7 +83,21 @@
         <div class="circle2text"><span>รักษ์โลกง่ายๆ <br>ทำได้ 24 ชั่วโมง</span></div>
 
     </div>
-    <div style="height:100vh"></div>
+    <div>
+        <table style="height:300px">
+          
+        </table>
+        <div>
+            <span>test</span>
+        </div>
+        <ul data-role="listview" data-source="app.information.data2" data-template="data2-template"></ul>
+    
+    <script id="data2-template" type="text/x-kendo-template">
+        
+      <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
+      <p>#= ProductName # : #= ProductID # </p>
+    </script>
+    </div>
     
     
    

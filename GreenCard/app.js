@@ -2,9 +2,10 @@
 
 (function() {
     var app = {
-        data: {}
-    };
-    
+        data: {},
+        
+    }
+
 
     var bootstrap = function() {
         $(function() {
@@ -16,7 +17,8 @@
             if(token != null){
             	page_start = 'components/welcome/view.html';
             }else{
-               	page_start = 'components/home/view.html';
+               	//page_start = 'components/home/view.html';
+                    page_start = 'components/earnbyid/view.html';
              };
             
             app.mobileApp = new kendo.mobile.Application(document.body, {

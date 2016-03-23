@@ -1,6 +1,19 @@
 'use strict';
 
 app.earnbyid = kendo.observable({
+    data2 : new kendo.data.DataSource({
+        type: "odata",
+        transport: {
+            read: {
+                url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
+            }
+        },
+    }),
+     clickedImage : function()
+            {
+        navigator.notification.alert("clickedImage");
+            },
+   
     onShow: function() {
          var header_token = null;
             
@@ -15,7 +28,8 @@ app.earnbyid = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {                
                             //navigator.notification.alert(result.data);
-                            kendo.bind($("#headerGreen"),result);  
+                            kendo.bind($("#headerearnbyid"),result);  
+                            kendo.bind($("#headerearnbyid1"),result);
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
@@ -40,12 +54,12 @@ app.earnbyid = kendo.observable({
         burnPoint: function() {
 				app.mobileApp.navigate('components/burnPoint/view.html');
         },
+         clickedImage : function()
+            {
+                app.mobileApp.navigate('components/earnbyid/earnby1.html');
+            },
        
     });
 
     parent.set('earnbyidModel', earnbyidModel);
 })(app.earnbyid);
-// START_CUSTOM_CODE_earnby
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_earnby

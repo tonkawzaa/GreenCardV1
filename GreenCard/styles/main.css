@@ -376,6 +376,7 @@
   position: relative;
 
 }
+/*
 .key {
   position: absolute;
   top: 50%;
@@ -435,6 +436,7 @@
   -webkit-transform: translate(-12.375vw, -21.43412874vw);
           transform: translate(-12.375vw, -21.43412874vw);
 }
+*/
 
 .begincircle
 {  
@@ -522,10 +524,3 @@
 
 
 
-/* START_CUSTOM_CODE_kendoUiMobileApp */
-
-
-/* Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes */
-
-
-/* END_CUSTOM_CODE_kendoUiMobileApp */

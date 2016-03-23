@@ -1,0 +1,64 @@
+<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.earnbyid" data-show="app.earnbyid.onShow" data-after-show="app.earnbyid.afterShow">
+     <div id = "headerearnbyid1">
+        <table style="width:100%">
+            <tr>
+            	<td>
+                    <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+                </td>
+                <td style="float:right;margin:10px 10px;">
+                
+                 <span class="form_reg"> คะแนนสะสม  <br></span>
+                 <span class="form_reg" data-bind="text: data"></span>
+                    
+                </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                <img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+               </td>
+            </tr>
+        </table>
+    </div>
+        
+    <div class="button-group">
+    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.information }">ฉลาดซื้อฉลาดเลือก</a>
+    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.earn }">สะสมคะแนน</a>
+    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.burnPoint }">รับสิทธิ์</a>
+	</div>
+    
+
+    <div id ="menumain" class="begincircle">
+        <div class="circle1"><img  src="keyin_image/icon-keyin01-over.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle3"><img  src="keyin_image/icon-keyin03-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle4"><img  src="keyin_image/icon-keyin04-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle5"><img  src="keyin_image/icon-keyin05-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle6"><img  src="keyin_image/icon-keyin06-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle7"><img  src="keyin_image/icon-keyin07-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle8"><img  src="keyin_image/icon-keyin08-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle9"><img  src="keyin_image/icon-keyin09-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle10"><img  src="keyin_image/icon-keyin10-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle11"><img  src="keyin_image/icon-keyin11-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle12"><img  src="keyin_image/icon-keyin12-on.png" style="width: 45px; height: auto;" /></div>
+        <div class="circle2text"><span>รักษ์โลกง่ายๆ <br>ทำได้ 24 ชั่วโมง</span></div>
+
+    </div>
+    <div>
+        <table style="height:300px">
+          
+        </table>
+        <div>
+            <span>test</span>
+        </div>
+        <ul data-role="listview" data-source="app.information.data2" data-template="data2-template"></ul>
+    
+    <script id="data2-template" type="text/x-kendo-template">
+        
+      <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
+      <p>#= ProductName # : #= ProductID # </p>
+    </script>
+    </div>
+    
+    
+   
+</div>

@@ -1,7 +1,6 @@
 'use strict';
 
 app.detailsproducts = kendo.observable({
-    shops:"TOP",
     
     onShow: function(e) {
         var item = e.view.params.id;
@@ -14,7 +13,7 @@ app.detailsproducts = kendo.observable({
                data: JSON.stringify({ barcode: item }),
                success: function(result) {
                             
-                //navigator.notification.alert(result.data);
+                navigator.notification.alert(result.data.certifications);
                             
                      var product_by_barcode  = result.data;
                      kendo.bind($("#view1"),product_by_barcode);
@@ -31,11 +30,37 @@ app.detailsproducts = kendo.observable({
 
                          },
              });
-        
+         var data0 = kendo.observable({
+            selectedfruit : "Gourmet",
+            
+            shopData: new kendo.data.DataSource({
+            transport: {
+                read: function(options) {
+                        $.ajax({
+                            type: "POST",
+                            url: "https://greenapi.odooportal.com/api/v1/shops",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+                                options.success(result.data);
+                               // navigator.notification.alert(result.data);
+                                
+                            },
+                            error: function(result) {
+                                  navigator.notification.alert(result);
+                         },
+                            });
+                                        }
+                        },
+                }),
+          
+            
+        });
+        kendo.bind($('#radioshop'),data0);
         	
             var header_token = null;
             
-           	var token = null;
+            var token = null;
         	token = localStorage.getItem("token");
             header_token =  "Bearer "+token;
             //navigator.notification.alert(header_token);
@@ -46,7 +71,7 @@ app.detailsproducts = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {                
                             //navigator.notification.alert(result.data);
-                            kendo.bind($("#headerGreen"),result);
+                            kendo.bind($("#headerdetailsproducts"),result);
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
@@ -56,16 +81,16 @@ app.detailsproducts = kendo.observable({
          var confirmsdata = {
                 confirms: function() {
                     
-                    navigator.notification.alert(item);
-                    navigator.notification.alert(shops);
-                    /*
+                    //navigator.notification.alert(item);
+                    //navigator.notification.alert(data0.selectedfruit);
+                    
                   $.ajax({
                         type: "POST",
                         url: "https://greenapi.odooportal.com/api/v1/points",
                         contentType: "application/json",
                 		headers: {'Authorization' : header_token},
                         data: JSON.stringify({ product_id: item ,
-                                               shop_id : 1, }),
+                                               shop_id : data0.selectedfruit, }),
                         success: function(result) {                
                             navigator.notification.alert(result);
                         },
@@ -73,7 +98,7 @@ app.detailsproducts = kendo.observable({
                             navigator.notification.alert(result);    
                         }
                     });
-                    */
+                    
                 },
              gotoearn : function() {
                  app.mobileApp.navigate('components/earn/view.html');
