@@ -12,7 +12,7 @@ app.burnPoint = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (result) {
-                                navigator.notification.alert(result);
+                                //navigator.notification.alert(result);
                                 options.success(result.data);
                                 
                             }

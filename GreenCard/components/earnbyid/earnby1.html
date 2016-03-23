@@ -52,16 +52,17 @@
     <div id="earnbyid1" data-role="listview" data-source="app.earnbyid.dataid1" data-template="earnlisttmp"></div>
        
      <script id="earnlisttmp" type="text/x-kendo-template">
-           <a href="components/detailsproducts/view.html?id=#: id #">
+           <a href="components/detailsproductsbyid/view.html?id=#: id #">
             <table>
                 <tr>
                 	<td>
-                    <img style="width:80%;" src="#: image_url #"/>
+                    <img style="width:75%;" src="#: image_url #"/>
                     </td>
          
                     <td>
-                     <p> #: name # </p>
+                     <p> #: name # <br>
                        id = #: id # <br>
+                     </p>
                     
                     </td>
                 </tr>

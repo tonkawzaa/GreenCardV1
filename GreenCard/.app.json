@@ -161,6 +161,13 @@
       "components": [],
       "title": "earnbyID",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "detailsproductsbyid",
+      "components": [],
+      "title": "detailsproductsbyid",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],

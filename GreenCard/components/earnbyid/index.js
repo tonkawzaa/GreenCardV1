@@ -13,7 +13,7 @@ app.earnbyid = kendo.observable({
                              data: JSON.stringify({ category_name: "Green 1" }),
                             dataType: "json",
                             success: function (result) {
-                                navigator.notification.alert(result.data);
+                                //navigator.notification.alert(result.data);
                                  options.success(result.data);
                                 },
                                    
