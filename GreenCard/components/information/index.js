@@ -1,7 +1,7 @@
 'use strict';
 
 app.information = kendo.observable({
-    
+    /*
     data: new kendo.data.DataSource({
             transport: {
                 read: function(options) {
@@ -34,9 +34,9 @@ app.information = kendo.observable({
         },
     }),
     
-   
+   */
     
-    onShow: function() {
+    onShow: function(e) {
         
       
             var header_token = null;
@@ -59,6 +59,23 @@ app.information = kendo.observable({
                             navigator.notification.alert(result);    
                         }
                 });
+                $.ajax({
+                            type: "POST",
+                            url: "https://greenapi.odooportal.com/api/v1/cert_types",
+                            contentType: "application/json; charset=utf-8",
+                            success: function(result) {
+                            
+                            //navigator.notification.alert(result.data); 
+                            e.view.element.find("#certtype").kendoMobileListView({
+        			            template: kendo.template($("#certtypestmp").html()),
+        			            dataSource: result.data,
+                     });
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result.error_message);    
+                        }
+                 });
+        
        
         
     },

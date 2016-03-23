@@ -335,11 +335,26 @@
     /* color: #fff; */
 }
 
+@font-face {
+        font-family: 'MyCustomFont1';
+        src: url("styles/sukhumvitreg-webfont.woff") format("woff"),
+             url("styles/sukhumvitreg-webfont.ttf") format("truetype");
+    }
+
 .message {
-    font-size: 22;
+
+    font-size:20px;
     color: #ffffff;
     text-align: center;
 }
+.message2 {
+     font-family: 'MyCustomFont1';
+        src: url("styles/sukhumvitreg-webfont.woff") format("woff"),
+             url("styles/sukhumvitreg-webfont.ttf") format("truetype");
+    
+}
+
+
 
 .form_reg {
     font-size: 18;

@@ -2,7 +2,8 @@
 
 app.burnPoint = kendo.observable({
     
-    data: new kendo.data.DataSource({
+    
+    eventgiftsdata: new kendo.data.DataSource({
             transport: {
                 read: function(options) {
                         $.ajax({
@@ -11,13 +12,15 @@ app.burnPoint = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                             dataType: "json",
                             success: function (result) {
+                                navigator.notification.alert(result);
                                 options.success(result.data);
+                                
                             }
                         });
                     }
             },
     }),
-    
+    /*
      data2: new kendo.data.DataSource({
                 type: "data",
             transport: {
@@ -46,9 +49,9 @@ app.burnPoint = kendo.observable({
             }
         },
     }),
+    */
     
-    
-    onShow: function() {
+    onShow: function(e) {
          
             
             var header_token = null;
@@ -69,14 +72,30 @@ app.burnPoint = kendo.observable({
                             
                             kendo.unbind($("#headerburnPoint"));
                                kendo.bind($("#headerburnPoint"),result);
-                            
-                            
-                            
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
-                        }
+                        },
                 });
+                
+            $.ajax({
+                            type: "POST",
+                            url: "https://greenapi.odooportal.com/api/v1/gifts",
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (result) {
+                               // navigator.notification.alert(result.data);
+                                e.view.element.find("#giftslist").kendoMobileListView({
+        			            template: kendo.template($("#giftslisttmp").html()),
+        			            dataSource: result.data,
+                                    });
+                                
+                             },
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                        },
+                  });
+        
         
       
     },
@@ -97,19 +116,15 @@ app.burnPoint = kendo.observable({
         burnPoint: function() {
 				app.mobileApp.navigate('components/burnPoint/view.html');
         },
-        destroyListView: function() {
-            	navigator.notification.alert("destroyListView");
+        
+        clickedImage : function()
+        {
+            navigator.notification.alert("clickedImage");
+             //app.mobileApp.navigate('components/earnbyid/earnby1.html');
         },
-        scrollviewClick: function() {
-            	navigator.notification.alert("scrollviewClick");
-        },
+  
        
     });
 
     parent.set('burnPointModel', burnPointModel);
 })(app.burnPoint);
-
-// START_CUSTOM_CODE_burnPoint
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_burnPoint

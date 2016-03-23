@@ -1,20 +1,34 @@
 'use strict';
 
 app.earnbyid = kendo.observable({
-    data2 : new kendo.data.DataSource({
-        type: "odata",
-        transport: {
-            read: {
-                url: "http://demos.telerik.com/kendo-ui/service/Northwind.svc/Products"
-            }
-        },
-    }),
-     clickedImage : function()
-            {
-        navigator.notification.alert("clickedImage");
+    
+    dataid1: new kendo.data.DataSource({
+                type: "data",
+            transport: {
+                read: function(options) {
+                        $.ajax({
+                            type: "POST",
+                            url: "https://greenapi.odooportal.com/api/v1/products_by_category",
+                            contentType: "application/json; charset=utf-8",
+                             data: JSON.stringify({ category_name: "Green 1" }),
+                            dataType: "json",
+                            success: function (result) {
+                                navigator.notification.alert(result.data);
+                                 options.success(result.data);
+                                },
+                                   
+                                
+                             
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                                                },
+                          });
+                    },
             },
-   
-    onShow: function() {
+    }),
+    
+    
+    onShow: function(e) {
          var header_token = null;
             
            	var token = null;
@@ -35,6 +49,9 @@ app.earnbyid = kendo.observable({
                             navigator.notification.alert(result);    
                         }
                 });
+                
+             
+        
       
     },
     afterShow: function() {}
@@ -54,7 +71,7 @@ app.earnbyid = kendo.observable({
         burnPoint: function() {
 				app.mobileApp.navigate('components/burnPoint/view.html');
         },
-         clickedImage : function()
+         clickedImage1 : function()
             {
                 app.mobileApp.navigate('components/earnbyid/earnby1.html');
             },

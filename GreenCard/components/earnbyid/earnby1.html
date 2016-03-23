@@ -40,25 +40,34 @@
         <div class="circle10"><img  src="keyin_image/icon-keyin10-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle11"><img  src="keyin_image/icon-keyin11-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle12"><img  src="keyin_image/icon-keyin12-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle2text"><span>รักษ์โลกง่ายๆ <br>ทำได้ 24 ชั่วโมง</span></div>
+        <div class="circle2text"><span>อาหารและเครื่องดื่ม </span></div>
 
     </div>
     <div>
-        <table style="height:300px">
+        <table style="height:350px">
           
         </table>
-        <div>
-            <span>test</span>
-        </div>
-        <ul data-role="listview" data-source="app.information.data2" data-template="data2-template"></ul>
-    
-    <script id="data2-template" type="text/x-kendo-template">
-        
-      <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
-      <p>#= ProductName # : #= ProductID # </p>
-    </script>
     </div>
     
+    <div id="earnbyid1" data-role="listview" data-source="app.earnbyid.dataid1" data-template="earnlisttmp"></div>
+       
+     <script id="earnlisttmp" type="text/x-kendo-template">
+           <a href="components/detailsproducts/view.html?id=#: id #">
+            <table>
+                <tr>
+                	<td>
+                    <img style="width:80%;" src="#: image_url #"/>
+                    </td>
+         
+                    <td>
+                     <p> #: name # </p>
+                       id = #: id # <br>
+                    
+                    </td>
+                </tr>
+            </table> 
+         </a>
+       </script>
     
    
 </div>

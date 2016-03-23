@@ -31,40 +31,23 @@
     <p>
        ฉลาดซื้อฉลาดเลือก
     </p>
-<!--
-   <ul data-role="listview" data-source="app.information.data" data-template="books-template"></ul>
-        
-   -->
+    </div>
+    
+    <div id="certtype"></div>
        
-       
-
-    <script type="text/x-kendo-template" id="books-template">
-    <p> #: name # </p>
+     <script id="certtypestmp" type="text/x-kendo-template">
+       <p> #: name # </p>
     <table>
     <tr>
     	<td>
-        <img  src="data:image/png;base64,#: image_medium #" />
+        <img  src="#: image_url #" />
         </td>
         <td>
         id = #: id # <br>
         points = #: points # 
         </td>
     </tr>
-    </table>
-           
-            
-           
-     </script>
-
-    </div>
-    
-    <ul data-role="listview" data-source="app.information.data2" data-template="data2-template"></ul>
-    
-    <script id="data2-template" type="text/x-kendo-template">
-        
-      <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
-      <p>#= ProductName # : #= ProductID # </p>
-    </script>
-    
+    </table> 
+       </script>
     
 </div>

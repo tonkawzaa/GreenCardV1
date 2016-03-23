@@ -26,15 +26,18 @@
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</a>
     <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</a>
 	</div>
-    <!--
+   
         <div data-role="scrollview"
-        data-source="app.burnPoint.data"
-        data-template="scrollview-template"
-        data-content-height="300px"
-        id="scrollview" 
-        data-click="burnPointModel.scrollviewClick">
+            data-source="app.burnPoint.eventgiftsdata"
+            data-template="scrollview-template"
+            data-content-height="300px"
+            id="scrollview">
     	</div>
-
+       <script type="text/x-kendo-template" id="scrollview-template">
+            <img style="width:80%;" src="#: image_url #" data-bind="events: { click: burnPointModel.clickedImage }" />
+     </script>
+    
+    <!--
     <ul data-role="listview" id="listview" data-source="app.burnPoint.data2" data-template="books-template"></ul>
 
     <script type="text/x-kendo-template" id="books-template">
@@ -42,7 +45,7 @@
             <div>#: required_points #</div>
             <div>#: id #</div>
             <div>#: end_date #</div>
-            <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
+            <div><img   style="width:80%;" src="#:image_url#" /></div>
             <div>#: name #</div>
         </a>
      </script>
@@ -50,17 +53,38 @@
      <script type="text/x-kendo-template" id="scrollview-template">
           
             <div>#: id #</div>
-            <div><img style="width:80%;" src="data:image/png;base64,#: image_mobile #" /></div>
+            <div><img style="width:80%;" src="#:image_url#" /></div>
         
      </script>
     -->
+    <!--
     
-    <ul data-role="listview" data-source="app.burnPoint.data3" data-template="data2-template"></ul>
+    <ul id = "top" data-role="listview" data-source="app.burnPoint.data3" data-template="data2-template"></ul>
     
 <script id="data2-template" type="text/x-kendo-template">
     
   <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
   <p>#= ProductName #</p>
 </script>
+   -->
+    
+   <div id="giftslist"></div>
+       
+     <script id="giftslisttmp" type="text/x-kendo-template">
+           <a href="components/detailsgifts/view.html?id=#: id #">
+            <table>
+                <tr>
+                	<td>
+                    <img style="width:80%;" src="#: image_url #"/>
+                    </td>
+                    <td>
+                     <p> #: name # </p>
+                    id = #: id # <br>
+                    required_points = #: required_points # 
+                    </td>
+                </tr>
+            </table> 
+         </a>
+       </script>
    
 </div>

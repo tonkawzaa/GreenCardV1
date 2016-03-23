@@ -63,8 +63,10 @@ app.detailsgifts = kendo.observable({
                       kendo.bind($('#data2Content'),detailsgifts);
                       kendo.bind($('#sumitContent'),detailsgifts);
                       
+                      
                       var image64 = {
-                                image_mobile: "data:image/jpeg;base64,"+result.data.image_mobile,
+                                //image_mobile: "data:image/jpeg;base64,"+result.data.image_mobile,
+                                  image_mobile: result.data.image_url,
                                     }
                           //result.data;
                       kendo.bind($('#divshowimage'),image64);

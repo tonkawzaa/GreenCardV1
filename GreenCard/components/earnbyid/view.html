@@ -68,8 +68,8 @@
     -->
     
     <div id ="menumain" class="begincircle">
-        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" data-bind="events: { click: earnbyidModel.clickedImage }" /></div>
-        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" onclick="earnbyidModel.clickedImage()"/></div>
+        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" data-bind="events: { click: earnbyidModel.clickedImage1 }" /></div>
+        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle3"><img  src="keyin_image/icon-keyin03-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle4"><img  src="keyin_image/icon-keyin04-on.png" style="width: 45px; height: auto;" /></div>
         <div class="circle5"><img  src="keyin_image/icon-keyin05-on.png" style="width: 45px; height: auto;" /></div>
@@ -84,19 +84,12 @@
 
     </div>
     <div>
-        <table style="height:300px">
+        <table style="height:350px">
           
         </table>
         <div>
             <span>test</span>
         </div>
-        <ul data-role="listview" data-source="app.information.data2" data-template="data2-template"></ul>
-    
-    <script id="data2-template" type="text/x-kendo-template">
-        
-      <img src="http://demos.telerik.com/kendo-ui/content/web/foods/#= ProductID #.jpg">
-      <p>#= ProductName # : #= ProductID # </p>
-    </script>
     </div>
     
     
