@@ -162,8 +162,13 @@
 }
 
 #kendoUiMobileApp.km-nova .button-group .km-button.primary {
-    background-color: #ff4350;
-    border-color: #ff4350;
+    /*background-color: #ff4350;*/
+    
+    background-color:transparent;
+    background-image: url('../images/button-large.png');
+    background-size: 100% 100%;
+    border-color: transparent;
+    
 }
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
@@ -185,7 +190,9 @@
 
 #kendoUiMobileApp.km-nova .button-group .km-button.primary,
 #kendoUiMobileApp.km-nova .km-button.km-state-active {
-    color: #fff;
+    color: #000;
+    font-size:20px;
+    font-family: 'sukhumvitreg', arial, sans-serif;
 }
 
 
@@ -304,6 +311,17 @@ p {
    font-style: normal;
 }
 
+@font-face {
+   font-family: 'sukhumvitreg';
+      src: url('sukhumvitreg-webfont.eot');
+      src: url('sukhumvitreg-webfont.eot?#iefix') format('embedded-opentype'),
+           url('sukhumvitreg-webfont.woff') format('woff'),
+           url('sukhumvitreg-webfont.ttf') format('truetype');
+
+   font-weight: normal;
+   font-style: normal;
+}
+
 .message {
 
     font-size:20px;
@@ -312,7 +330,7 @@ p {
 }
 
 p {
-   font-family: 'sukhumvitlight', arial, sans-serif;
+   font-family: 'sukhumvitreg', arial, sans-serif;
    font-weight: normal;
    font-style: normal;
 }
