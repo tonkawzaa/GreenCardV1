@@ -12,7 +12,10 @@ app.termsofuse = kendo.observable({
             app.mobileApp.navigate('components/reigister/view.html');
         },
         cancel: function() {
-        }
+        },
+        gohome: function() {
+                app.mobileApp.navigate('components/home/view.html');
+            },
     });
 
     parent.set('termsofuseModel', termsofuseModel);

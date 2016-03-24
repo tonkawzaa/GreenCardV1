@@ -2,15 +2,15 @@
     
     <div  class="signup1-view" style="height:100vh">
         <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.gohome }">
-        <p class="message">
+        <p style="margin:10px 20px;font-size:25px;"class="message"><b>
             ลงทะเบียน
-        </p>
+        </b></p>
         <div style="margin:0px auto;display:block;width: 60px;">
         <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         </div>
- 
+ <!--
         <form >
             <ul class="form-content" data-role="listview" data-style="inset">
                 <li class="form-content-item">
@@ -51,16 +51,52 @@
                 
             </ul>           
         </form>
-         <div class="button-group">
-                <a class="primary" data-role="button" data-bind="events: { click: reigisterModel.toggleView }">ถัดไป >>></a>
+        -->
+        
+        <form>
+                <table style="width:95%;margin:20px 10px 20px 10px;" class="message" >
+                   <tr class="backgroundimg" style="height:8vh;">
+                       <td>
+                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.email" placeholder="อีเมล์ของคุณ" type="email">
+                       </td>
+                  </tr>
+                    <tr style="height:3vh;">
+                      <td>
+                          
+                      </td>
+                  </tr>
+                  <tr class="backgroundimg" style="height:8vh;">
+                      <td>
+                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.password1" placeholder="รหัสผ่าน" type="password">
+                      </td>
+                  </tr>
+                      <tr style="height:3vh;">
+                      <td>
+                          
+                      </td>
+                  </tr>
+                     <tr class="backgroundimg" style="height:8vh;">
+                      <td>
+                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.confirmpassword" placeholder="ยืนยันรหัสผ่าน" type="password">
+                      </td>
+                  </tr>
+                  <tr style="height:25vh;">
+                      
+                  </tr>
+                    
+                    
+                </table>
+             </form>
+         <div class="button-group" >
+                <a class="primary" style="height:8vh;" data-role="button" data-bind="events: { click: reigisterModel.toggleView }">ถัดไป >>></a>
             </div>
     </div>
     
     <div  class="signup2-view" style="display:none;height:100vh;">
         <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.toggleView }">
-        <p class="message">
+        <p style="margin:10px 20px;font-size:25px;"class="message"><b>
             ลงทะเบียน
-        </p>
+        </b></p>
         <div style="margin:0px auto;display:block;width: 60px;">
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
@@ -77,7 +113,7 @@
 
                        <span  class="form_reg">ชื่อ :</span>
 
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.firstname" placeholder="firstname" type="text">
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text">
                     </label>
 
                 </li>
@@ -88,7 +124,7 @@
 
                        <span  class="form_reg">นามสกุล :</span>
 
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.lastname" placeholder="lastname" type="text">
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.lastname"  type="text">
                     </label>
 
                 </li>
@@ -100,7 +136,7 @@
 
                         <span  class="form_reg">เบอร์โทรศัพท์ :</span>
 
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.mobile" placeholder="+663 444 555 666" type="tel">
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.mobile"  type="tel">
                     </label>
 
                 </li>
@@ -133,7 +169,7 @@
                     <label>
 
                         <span  class="form_reg">หมายเลขบัตรประชาชน :</span>
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" placeholder="citizen_id" type="text">
+                        <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text">
                     </label>
 
                 </li>

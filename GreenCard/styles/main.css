@@ -170,6 +170,16 @@
     border-color: transparent;
     
 }
+#kendoUiMobileApp.km-nova .button-group .km-button.primary2 {
+    /*background-color: #ff4350;*/
+    
+    background-color:transparent;
+    background-image: url('../images/button-large.png');
+    background-size: 100% 100%;
+    border-color: transparent;
+    float:right;
+    
+}
 
 #kendoUiMobileApp.km-flat .button-group .km-button.primary {
     color: #fff;
@@ -257,6 +267,7 @@
 }
 
 #kendoUiMobileApp.km-nova .custom-filter input {
+    
     padding: .5em 0 .5em 1.8em;
 }
 
@@ -290,6 +301,25 @@ p {
    font-weight: normal;
    font-style: normal;
 }
+span{
+   font-family: 'sukhumvitlight', arial, sans-serif;
+   font-weight: normal;
+   font-style: normal;
+}
+.backgroundimg
+{
+    background-image: url('../images/button-large.png');
+    background-size: 100% 100%;
+}
+
+input{
+    background-color:transparent;
+  
+    border-color: transparent;
+    font-size:25px;
+    font-family: 'sukhumvitreg', arial, sans-serif;
+}
+
 
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
@@ -324,7 +354,7 @@ p {
 
 .message {
 
-    font-size:20px;
+   /* font-size:20px; */
     /*color: #ffffff;*/
     text-align: center;
 }
@@ -341,16 +371,25 @@ p {
 }
 .button {
     /*color: #ffffff; */
+    /*
     border-width: 1;
     border-color: #ffffff;
     background-color: transparent;
-    background:transparent;
+    background:transparent;*/
     /* width: 250; */
+    /*
     margin: 20 10;
-    border-radius: 10;
+    border-radius: 10;*/
     /*font-weight: bold; */
+    /*
     font-size: 30;
-    text-align: center;
+    text-align: center;*/
+    
+    background-color:transparent;
+    background-image: url('../images/button-large.png');
+    background-size: 100% 100%;
+    border-color: transparent;
+    border-width: 1;
 }
 
  

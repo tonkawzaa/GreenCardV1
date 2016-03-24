@@ -1,10 +1,18 @@
 <div data-role="view" data-title="" data-layout="main" data-model="app.termsofuse" data-show="app.termsofuse.onShow" data-after-show="app.termsofuse.afterShow">
     <div id="termsofuseModel" class="form-view" style="height:100vh">
-        <p class="message">ข้อตกลงการใช้งาน</p><br>
-        <form>
-            <ul class="form-content" data-role="listview" data-style="inset">
-                <div data-role="scroller" style="height: 70vh;">
-                     <p>Enzo Ferrari was not initially interested in the idea of producing road cars when he formed Scuderia Ferrari in 1929,
+         <table style="width:100%" >
+          <tr>
+            
+            <td style="float:left;margin:15px 10px;" ><p style="font-size:15px;">ข้อตกลงการใช้งาน</p></td>
+            <td style="float:right;"><img  src="images/button-close.png"  style="margin:15px 20px;width: 15px; height: auto;" data-bind="events: { click: termsofuseModel.gohome }" ></td> 
+          </tr>
+        </table>
+
+                <div data-role="scroller" style="height: 70vh; ">
+                    <table style="width:90%;background-color:rgba(255,255,255,0.4);margin:0px 15px; " >
+                        <tr>
+                            <td>
+                                <p>Enzo Ferrari was not initially interested in the idea of producing road cars when he formed Scuderia Ferrari in 1929,
                      with headquarters in Modena. Scuderia Ferrari (literally means "Ferrari Stable" and is usually
                      used to mean "Team Ferrari." Ferrari prepared and fielded Alfa Romeo racing cars for amateur drivers. In 1933 Alfa Romeo
                      withdrew its in-house racing team and appointed Scuderia Ferrari as works team. Enzo Ferrari received latest specifications
@@ -29,14 +37,18 @@
                      <p>Early in 1969, Fiat took a 50% stake in Ferrari. An immediate result was an increase in available investment funds, and work started at
                      once on a factory extension intended to transfer production from Fiat's Turin plant of the Ferrari engined Fiat Dino. New model investment
                      further up in the Ferrari range also received a boost.</p>
-                    </div>
-            </ul>
+                            </td>
+                        </tr>
+                     
+                    </table>
+                </div>
 
             <div class="button-group" >
-                <a class="primary" data-role="backbutton" data-transition="slide:left reverse"  >ยกเลิก</a>
                 <a class="primary" data-role="button" data-bind="events: { click: termsofuseModel.submit }">ยืนยัน</a>
+                <a class="primary" data-role="backbutton" data-transition="slide:left reverse"  >ยกเลิก</a>
+                
             </div>
-        </form>
+        
         <!-- START_CUSTOM_CODE_termsofuseModel -->
         <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
 

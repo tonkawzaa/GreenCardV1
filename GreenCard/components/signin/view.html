@@ -2,47 +2,42 @@
     <div style="height:100vh">
      <table style="width:100%">
   <tr>
-    <td><img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: signinModel.gohome }"></td> 
-      <td style="float:right;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ลงทะเบียน</span></td>
+    <td><img src="images/button-arrow-left.png" alt="left" style="margin:10px 20px;width: 15px; height: auto;" data-bind="events: { click: signinModel.gohome }"></td> 
+      <td style="float:right;margin:10px 10px;" ><span  style="font-size:20px;"class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ลงทะเบียน</span></td>
   </tr>
         </table>
    
-    <div id="signinModel" class="form-view">
-        <form>
-            <ul class="form-content" data-role="listview" data-style="inset">
-                <li class="form-content-item">
+    <p style="margin:10px 20px;font-size:25px;"><b>เข้าสู่ระบบ</b></p>
 
-
-                    <label>
-
-                        <span>อีเมล์ของคุณ</span>
-
-                        <input data-bind="value: signinModel.fields.email" placeholder="อีเมล์ของคุณ" type="email">
-                    </label>
-
-                </li>
-                <li class="form-content-item">
-
-
-                    <label>
-
-                        <span>รหัสผ่าน</span>
-
-                        <input data-bind="value: signinModel.fields.password" placeholder="รหัสผ่าน" type="password">
-                    </label>
-
-                </li>
-            </ul>
-
-            <div class="button-group">
-                <a class="primary" data-role="button" data-bind="events: { click: signinModel.submit }">ลงชื่อเข้าใช้</a>
-            </div>
-        </form>
-    </div>
+        <div id="signinModel" >
+            <form>
+                <table style="width:95%;margin:0px 10px 0px 10px;" class="message" >
+                   <tr class="backgroundimg" >
+                       <td>
+                           <input style="width:80%;" data-bind="value: signinModel.fields.email" placeholder="อีเมล์ของคุณ" type="email">
+                       </td>
+                  </tr>
+                  <tr class="backgroundimg">
+                      <td>
+                          <input style="width:80%;" data-bind="value: signinModel.fields.password" placeholder="รหัสผ่าน" type="password">
+                      </td>
+                  </tr>
+                  <tr style="height:40vh;">
+                      
+                  </tr>
+                    
+                    
+                </table>
+             </form>
+             <div class="button-group" style="width:95%;">
+                <a  class="primary" data-role="button" data-bind="events: { click: signinModel.submit }">ลงชื่อเข้าใช้</a>
+             </div>
+        </div>
+        
           <table style="width:100%">
   <tr>
-    <td style="float:left;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ข้อตกลงการใช้งาน</span></td> 
-      <td style="float:right;margin:10px 10px;" ><span class="form_reg" data-bind="events: { click: signinModel.goforgotpass }">ลืมรหัสผ่าน</span></td>
+    <td style="float:left;margin:10px 20px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ข้อตกลงการใช้งาน</span></td> 
+      <td style="float:right;margin:10px 20px;" ><span class="form_reg" data-bind="events: { click: signinModel.goforgotpass }">ลืมรหัสผ่าน</span></td>
   </tr>
         </table>
         
