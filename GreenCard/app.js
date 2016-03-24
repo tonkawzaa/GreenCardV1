@@ -22,7 +22,7 @@
              };
             
             app.mobileApp = new kendo.mobile.Application(document.body, {
-                skin: 'nova',
+                //skin: 'nova',
                 transition: "zoom",
                 initial: page_start,
           

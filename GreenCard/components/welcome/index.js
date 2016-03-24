@@ -2,6 +2,7 @@
 
 app.welcome = kendo.observable({
     onShow: function() {
+        /*
         var header_token = null;
             
         var token = null;
@@ -24,6 +25,7 @@ app.welcome = kendo.observable({
                             
                         }
                 });
+        */
     },
     afterShow: function() {}
 });

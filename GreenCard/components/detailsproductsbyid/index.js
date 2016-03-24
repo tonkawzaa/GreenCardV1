@@ -29,6 +29,7 @@ app.detailsproductsbyid = kendo.observable({
 
                          },
              });
+         /*
          var data0 = kendo.observable({
             selectedfruit : "Gourmet",
             
@@ -56,7 +57,7 @@ app.detailsproductsbyid = kendo.observable({
             
         });
         kendo.bind($('#radioshop'),data0);
-        	
+        	*/
             var header_token = null;
             
             var token = null;
@@ -77,11 +78,28 @@ app.detailsproductsbyid = kendo.observable({
                         }
                 });
          
+      var detailsshopModel = kendo.observable({
+        
+        fields: {
+            selectedshop: 3,
+        },
+        
+        submitfruit: function() {
+            
+           
+           //navigator.notification.alert(item);
+
+        },
+        
+        
+        }); 
+        kendo.bind($('#radioselectedshop'),detailsshopModel);
+         
          var confirmsdata = {
                 confirms: function() {
                     
                     //navigator.notification.alert(item);
-                    //navigator.notification.alert(data0.selectedfruit);
+                    //navigator.notification.alert(detailsshopModel.fields.selectedshop);
                     
                   $.ajax({
                         type: "POST",
@@ -89,7 +107,7 @@ app.detailsproductsbyid = kendo.observable({
                         contentType: "application/json",
                 		headers: {'Authorization' : header_token},
                         data: JSON.stringify({ product_id: item ,
-                                               shop_id : 1, }),
+                                               shop_id : detailsshopModel.fields.selectedshop, }),
                         success: function(result) {                
                             navigator.notification.alert(result);
                         },
