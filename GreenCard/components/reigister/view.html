@@ -102,7 +102,7 @@
         <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         </div>
-        
+        <!--
         <form >
         <ul class="form-content" data-role="listview" data-style="inset">
             
@@ -111,10 +111,10 @@
 
                     <label>
 
-                       <span  class="form_reg">ชื่อ :</span>
+                       <p>ชื่อ :</p>
 
                         <input class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text">
-                    </label>
+                    
 
                 </li>
                 <li class="form-content-item">
@@ -190,6 +190,136 @@
                 </li>
             </ul> 
         </form>
+        -->
+        <table style="width:100%;" >
+         <tr>
+             <td>
+                <p>
+                    ชื่อ
+                </p>
+            </td>
+             <td>
+                 <input class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text">
+             </td>
+         </tr>
+          <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+          <tr>
+             <td>
+                <p>
+                   นามสกุล
+                </p>
+            </td>
+             <td>
+                 <input class="form_reg" data-bind="value: reigisterModel.fields.lastname"  type="text">
+             </td>
+         </tr>
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+                <tr>
+             <td>
+                <p>
+                   เบอร์โทรศัพท์
+                </p>
+            </td>
+             <td>
+                 <input class="form_reg" data-bind="value: reigisterModel.fields.mobile"  type="tel">
+             </td>
+         </tr>
+            
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+
+         <tr>
+             <td>
+                <p>
+                   วันเกิด
+                </p>
+            </td>
+             <td>
+                 <input class="form_reg" data-bind="value: reigisterModel.fields.birthdate" type="date">
+             </td>
+         </tr>
+            
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+            
+         <tr>
+             <td>
+                <p>
+                   เพศ
+                </p>
+            </td>
+             <td>
+                 <select class="form_reg" data-bind="value: reigisterModel.fields.gender" data-role="dropdownlist">
+                            <option value="M">ชาย</option>
+                            <option value="F">หญิง</option>
+                        </select>
+             </td>
+         </tr>
+            
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+            
+         <tr>
+             <td>
+                <p>
+                   หมายเลขบัตรประชาชน
+                </p>
+            </td>
+             <td>
+                 <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text">
+             </td>
+         </tr>
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+         <tr>
+             <td>
+                <p>
+                   อาชีพ
+                </p>
+            </td>
+             <td>
+                 <select class="form_reg" data-bind="value: reigisterModel.fields.occupation" data-role="dropdownlist">
+                            <option value="0">ราชการ</option>
+                            <option value="1">เอกชน</option>
+                            <option value="2">รัฐวิสาหกิจ</option>
+                            <option value="3">อิสระ</option>
+                            <option value="4">NGO</option>
+                            <option value="5">นิสิต-นักศึกษา </option>
+                 </select>
+             </td>
+         </tr>
+            <tr>
+             <td colspan="2" >
+                <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
+            </td>
+         </tr>
+            
+            
+            
+        </table>
+        
+             
+        
          <div class="button-group">
                 <a class="primary" data-role="button" data-bind="events: { click: reigisterModel.submit }" >ถัดไป >>></a>
            </div>

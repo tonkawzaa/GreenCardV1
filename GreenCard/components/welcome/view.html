@@ -6,14 +6,31 @@
     </div>
     
     <div style="height:100vh" class="message">
-        <p>
+        <p style="font-size:30px;"><B>
            ยินดีต้อนรับเข้าสู่
-        </p>
+        </B></p>
          <p>
            Green Card Application
         </p>
-        <a class="primary" data-role="button" data-bind="events: { click: welcomeModel.information }">ฉลาดซื้อฉลาดเลือก</a><br>
-    	<a class="primary" data-role="button" data-bind="events: { click: welcomeModel.earn }">สะสมคะแนน</a><br>
-		<a class="primary" data-role="button" data-bind="events: { click: welcomeModel.burnPoint }">รับสิทธิ์</a><br>
+        
+        <table style="width:100%; " border="1" class="message">
+            <tr>
+             <td>
+                 <img  src="images/icon-title01.png" style="margin:0px 0px 10px 0px;width: 40%; height: auto;" data-bind="events: { click: welcomeModel.information }" />
+             </td>
+            </tr>
+            <tr>
+             <td>
+                 <img  src="images/icon-title02.png" style="margin:10px 10px;width: 40%; height: auto;" data-bind="events: { click: welcomeModel.earn }" />
+             </td>
+            </tr>
+            <tr>
+             <td>
+                 <img  src="images/icon-title03.png" style="margin:10px 0px 0px 0px;width: 40%; height: auto;" data-bind="events: { click: welcomeModel.burnPoint }" />
+             </td>
+            </tr>
+          
+        </table> 
+        
     </div>
 </div>
