@@ -19,6 +19,8 @@ app.burnPoint = kendo.observable({
                         });
                     }
             },
+       // serverPaging: true,
+         pageSize: 4,
     }),
     /*
      data2: new kendo.data.DataSource({

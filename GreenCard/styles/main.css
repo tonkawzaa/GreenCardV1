@@ -54,6 +54,7 @@
 #kendoUiMobileApp .km-drawer-button:after,
 #kendoUiMobileApp .km-drawer-button:before {
     content: '\e077';
+
 }
 
 #kendoUiMobileApp.km-flat .km-drawer .km-content {
@@ -203,6 +204,7 @@
     color: #000;
     font-size:20px;
     font-family: 'sukhumvitreg', arial, sans-serif;
+    
 }
 
 
@@ -369,7 +371,7 @@ p {
     font-size: 18;
     /*color: #ffffff;*/
 }
-.button {
+button {
     /*color: #ffffff; */
     /*
     border-width: 1;
@@ -409,7 +411,7 @@ p {
   position: relative;
 
 }
-/*
+
 .key {
   position: absolute;
   top: 50%;
@@ -469,7 +471,7 @@ p {
   -webkit-transform: translate(-12.375vw, -21.43412874vw);
           transform: translate(-12.375vw, -21.43412874vw);
 }
-*/
+
 
 .begincircle
 {  
@@ -555,5 +557,13 @@ p {
   left: 43%;
 }
 
+        .listCert {
+            float: right;
+        }
+.ListViewID
+{
+     height: 400px;
+     overflow: auto;
+}
 
 

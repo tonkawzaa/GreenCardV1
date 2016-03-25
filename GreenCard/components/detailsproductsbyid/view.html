@@ -1,45 +1,95 @@
 <div data-role="view" data-title="detailsproductsbyid" data-layout="main-nonav" data-model="app.detailsproductsbyid" data-show="app.detailsproductsbyid.onShow" data-after-show="app.detailsproductsbyid.afterShow">
 
     <div id = "headerdetailsproductsbyid">
-        <table style="width:100%">
-        <tr>
-        	<td>
-                <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
-            </td>
-            <td style="float:right;margin:10px 10px;">
+<table style="width:100%"  class="message" >
+    <tr>
+    	<td style="width:23%">
+        <img  src="images/pic-logo-home.png" style="width: 30px; height: auto;" />
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu02.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ฉลากสิ่งแวดล้อม</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu03.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ข่าวสาร</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"><b> คะแนนสะสม</b>  <br></span>
+            <span class="form_reg" style="font-size:12px;font-weight: bold;" data-bind="text: data" ></span>
             
-                <span class="form_reg"> คะแนนสะสม  <br></span>
-                  <span class="form_reg" data-bind="text: data"></span>
-                
+        </td>
+    </tr>
+        <tr>
+            <td colspan="7">
+        	<img  src="images/line.png" style="margin:5px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+    <table style="width:100%"  class="message" >
+        <tr>
+            <td style="float:left;margin:10px 20px;">
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: information }">หน้าหลัก</span>
+            </td>
+            <td>
+                <span style="font-size:20px;font-weight: bold;" data-bind="events: { click: earn }">สะสมคะแนน</span>
+            </td>
+            <td style="float:right;margin:10px 20px;">
+                <span style="font-size:20px; color: #ffffff;" data-bind="events: { click: burnPoint }">รับสิทธิ์</span>
             </td>
         </tr>
-            <tr>
-                <td colspan="2">
-            	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
-            	</td>
-            </tr>
-        </table>
-    </div>
-        
-    <div class="button-group" id = "manubar">
-        <a class="primary" data-role="button" data-bind="events: { click: information }">ฉลาดซื้อฉลาดเลือก</a>
-        <a class="primary" data-role="button" data-bind="events: { click: earn }">สะสมคะแนน</a>
-        <a class="primary" data-role="button" data-bind="events: { click: burnPoint }">รับสิทธิ์</a>
-	</div>
-    
-    <script id="tmp" type="text/x-kendo-template">
-            <p>#: name # </p>
-            <img style="width:80%;" src="#: image_url #"/>
-    </script>
-
-    <div id="scrollView_product_by_id"></div> 
+    </table>
     
     
+    <img style="margin:5px auto;display:block;width: 90%; height: auto;" id="product_by_id_main_img" data-bind="attr: { src: image_url }" />
     
-     <div id="product_by_idview" >
-         <span data-bind="text: id"></span><br>
-         <span data-bind="text: name"></span><br>
+         <div id="product_by_idview" class="message" >
+         <!-- <span data-bind="text: id"></span><br>  -->
+         <span  style="font-size:20px;font-weight: bold;" data-bind="text: name"></span><br>
      </div>
+
+   <!--
+     <div id="scrollView_product_by_id"></div> 
+   
+    <script id="tmp" type="text/x-kendo-template">
+       
+            <p>#: name # </p>
+            <img style="width:70px" src="#: image_url #"/>
+      
+    </script>
+   -->
+    <div style="margin:5px auto;display:block;width: 30%; height: auto;" >
+        <div id="product_by_id_list_cert" class="message" >
+        </div>
+    </div>
+    
+    <script id="product_by_id_list_cert_tmp" type="text/x-kendo-template">
+      <p>#: name # </p>
+      <img style="width:80px" src="#: image_url #"/>
+    </script>
+    
+    <p style="font-size:16px;font-weight: bold;">
+        รายละเอียดสินค้า
+    </p>
+    
+    <div id="product_by_id_desc_to_publish" style="margin:0px 10px;">
+        <span data-bind="text: name"></span>
+        <span data-bind="html: desc_to_publish" ></span>
+    </div>
+
+
+    
     
     <!--
           <a data-align="right" href="#popover-location" data-rel="popover" data-role="button">เลือกร้านค้า</a>

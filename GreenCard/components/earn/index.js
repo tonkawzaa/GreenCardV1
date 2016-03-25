@@ -35,7 +35,7 @@ app.earn = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {                
                             //navigator.notification.alert(result.data);
-                            kendo.bind($("#headerGreen"),result);  
+                            kendo.bind($("#headerearnGreen"),result);  
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
