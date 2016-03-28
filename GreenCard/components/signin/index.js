@@ -12,8 +12,11 @@ app.signin = kendo.observable({
 (function(parent) {
     var signinModel = kendo.observable({
         fields: {
+            /*
             password: 'password',
-            email: 'top@gmail.com',
+            email: 'top@gmail.com',*/
+            password: '',
+            email: '',
         },
         submit: function() {
             
@@ -30,7 +33,8 @@ app.signin = kendo.observable({
                             //token = result.data.access_token;
                         },
                         error: function(result) {
-                            navigator.notification.alert(result);
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ชื้อผู้เข้าใช้ หรือ รหัสไม่ถูกต้อง");
                             
                         }
                 });

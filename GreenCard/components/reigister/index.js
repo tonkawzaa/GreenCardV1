@@ -14,6 +14,7 @@ app.reigister = kendo.observable({
     var token= null ;
     var reigisterModel = kendo.observable({
         fields: {
+            /*
             occupation: '',
             citizenid: '1234567890',
             birthdate: '',
@@ -24,6 +25,17 @@ app.reigister = kendo.observable({
             lastname: 'lastname',
             firstname: 'firstname',
             email: 'top@gmail.com',
+            */
+            occupation: '',
+            citizenid: '',
+            birthdate: '',
+            mobile: '',
+            gender: '',
+            confirmpassword: '',
+            password1: '',
+            lastname: '',
+            firstname: '',
+            email: '',
         },
 
         submit: function() {
@@ -49,7 +61,7 @@ app.reigister = kendo.observable({
                             token = null ;
                             localStorage.clear();
                             localStorage.setItem("token",result.data.access_token);
-                            navigator.notification.alert(result.data.access_token);
+                            //navigator.notification.alert(result.data.access_token);
                             //token = result.data.access_token;
                             app.mobileApp.navigate('components/reigister/success.html');
                             
