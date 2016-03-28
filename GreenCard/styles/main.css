@@ -557,13 +557,35 @@ button {
   left: 43%;
 }
 
-        .listCert {
-            float: right;
-        }
-.ListViewID
-{
-     height: 400px;
-     overflow: auto;
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    border: dashed 1px;
+    border-radius: 50%;
+    margin: 1.75em auto 0;
+}
+.circle-container a {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+}
+.rotate{
+    transform: rotate(-40deg);
 }
 
+.grid li 
+{ 
+     float: left;
+     width: 45%; 
+     height: 200px; 
+    /* border-right: 1px dotted #CCC;
+     border-bottom: 1px dotted #CCC;*/
+     padding: 20px; 
+    
+ }
 

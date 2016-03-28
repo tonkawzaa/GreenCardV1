@@ -54,31 +54,34 @@
     
     <img style="margin:5px auto;display:block;width: 90%; height: auto;" id="product_by_id_main_img" data-bind="attr: { src: image_url }" />
     
-         <div id="product_by_idview" class="message" >
+     <div id="product_by_idview" class="message" >
          <!-- <span data-bind="text: id"></span><br>  -->
          <span  style="font-size:20px;font-weight: bold;" data-bind="text: name"></span><br>
      </div>
 
-   <!--
-     <div id="scrollView_product_by_id"></div> 
-   
-    <script id="tmp" type="text/x-kendo-template">
-       
-            <p>#: name # </p>
-            <img style="width:70px" src="#: image_url #"/>
-      
-    </script>
-   -->
-    <div style="margin:5px auto;display:block;width: 30%; height: auto;" >
+             <ul id="scrollView_product_by_id"  class="grid"></ul> 
+           
+            <script id="tmp" type="text/x-kendo-template">
+               
+                    <p>#: name # </p>
+                    <img style="width:70px" src="#: image_url #"/>
+              
+            </script>
+    <!--
+    <div style="margin:5px auto;display:block;width: 100%; height: auto;" >
         <div id="product_by_id_list_cert" class="message" >
         </div>
     </div>
+    -->
+  
+        <!--
     
     <script id="product_by_id_list_cert_tmp" type="text/x-kendo-template">
       <p>#: name # </p>
       <img style="width:80px" src="#: image_url #"/>
     </script>
-    
+    -->
+    <table style="width:100%;"></table>
     <p style="font-size:16px;font-weight: bold;">
         รายละเอียดสินค้า
     </p>
@@ -87,7 +90,13 @@
         <span data-bind="text: name"></span>
         <span data-bind="html: desc_to_publish" ></span>
     </div>
+    
+   
+             
+                
 
+   
+             
 
     
     
@@ -107,48 +116,98 @@
     </script>   
     -->
     
+    <p style="font-size:16px;font-weight: bold;">
+        กรุณาระบุห้างสรรพสินค้า
+    </p>
+    
     <div id = "radioselectedshop">
          
-        <table style="width:100%; " border="1" class="message">
+        <table style="width:100%; " class="message">
          <tr>
              <td>
                      <label>
+                         <img  src="store-logo/logo-09tesco-lotus.png" style="width: 50px; height: auto;" /><br>
                          <input type="radio" name="shop" value="1"
-                                data-bind="checked: fields.selectedshop" /><br>Apple
+                                data-bind="checked: fields.selectedshop" />
+                         
                      </label>
             </td>
              <td>
                      <label>
+                         <img  src="store-logo/logo-02big-c.png" style="width: 50px; height: auto;" /><br>
                          <input type="radio" name="shop" value="2"
-                                data-bind="checked: fields.selectedshop" /><br>Banana
+                                data-bind="checked: fields.selectedshop" />
                      </label>
              </td>
              <td>
                      <label>
+                         <img  src="store-logo/logo-06top-supermarket.png" style="width: 50px; height: auto;" /><br>
                          <input type="radio" name="shop" value="3"
-                                data-bind="checked: fields.selectedshop" /><br>Orange
+                                data-bind="checked: fields.selectedshop" />
                      </label>
              </td>
              <td>
                      <label>
+                         <img  src="store-logo/logo-08scg.png" style="width: 50px; height: auto;" /><br>
                          <input type="radio" name="shop" value="4"
-                                data-bind="checked: fields.selectedshop" /><br>Avocado
+                                data-bind="checked: fields.selectedshop" />
                       </label>
              </td>
              <td>
                       <label>
+                          <img  src="store-logo/logo-05makro.png" style="width: 50px; height: auto;" /><br>
                          <input type="radio" name="shop" value="5"
-                                data-bind="checked: fields.selectedshop" /><br>Broccoli
+                                data-bind="checked: fields.selectedshop" />
                       </label>
              </td>     
              </tr>
+            
+            <tr>
+             <td>
+                     <label>
+                         <img  src="store-logo/logo-04home-pro.png" style="width: 50px; height: auto;" /><br>
+                         <input type="radio" name="shop" value="6"
+                                data-bind="checked: fields.selectedshop" />
+                         
+                     </label>
+            </td>
+             <td>
+                     <label>
+                         <img  src="store-logo/logo-10themall.png" style="width: 50px; height: auto;" /><br>
+                         <input type="radio" name="shop" value="7"
+                                data-bind="checked: fields.selectedshop" />
+                     </label>
+             </td>
+             <td>
+                     <label>
+                         <img  src="store-logo/logo-01central.png" style="width: 50px; height: auto;" /><br>
+                         <input type="radio" name="shop" value="8"
+                                data-bind="checked: fields.selectedshop" />
+                     </label>
+             </td>
+             <td>
+                     <label>
+                         <img  src="store-logo/logo-07robinson.png" style="width: 50px; height: auto;" /><br>
+                         <input type="radio" name="shop" value="9"
+                                data-bind="checked: fields.selectedshop" />
+                      </label>
+             </td>
+             <td>
+                      <label>
+                          <img  src="store-logo/logo-03seven-eleven.png" style="width: 50px; height: auto;" /><br>
+                         <input type="radio" name="shop" value="10"
+                                data-bind="checked: fields.selectedshop" />
+                      </label>
+             </td>     
+             </tr>
+            
      </table>                             
 </div>
     
     
-    
-    <div id = "confirms_earn">
+    <div id = "confirms_earn" class="button-group">
       <a class="primary" data-role="button" data-bind="events: { click: confirms }">ยืนยันสิทธิ์</a>
       <a class="primary" data-role="button" data-bind="events: { click: gotoearn }">ยกเลิก</a>
 	</div>
 </div>
+

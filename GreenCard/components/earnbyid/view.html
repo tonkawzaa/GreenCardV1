@@ -1,30 +1,55 @@
 <div data-role="view" data-title="" data-layout="main-nonav" data-model="app.earnbyid" data-show="app.earnbyid.onShow" data-after-show="app.earnbyid.afterShow">
-      <div id = "headerearnbyid">
-    <table style="width:100%">
+    <div style="height:100vh">  
+    <div id = "headerearnbyid">
+      <table style="width:100%"  class="message" >
     <tr>
-    	<td>
-        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+    	<td style="width:23%">
+        <img  src="images/pic-logo-home.png" style="width: 30px; height: auto;" />
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu02.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ฉลากสิ่งแวดล้อม</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu03.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ข่าวสาร</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
         </td>
         <td style="float:right;margin:10px 10px;">
         
-            <span class="form_reg"> คะแนนสะสม  <br></span>
-              <span class="form_reg" data-bind="text: data"></span>
+            <span class="form_reg"><b> คะแนนสะสม</b>  <br></span>
+            <span class="form_reg" style="font-size:12px;font-weight: bold;" data-bind="text: data" ></span>
             
         </td>
     </tr>
         <tr>
-            <td colspan="2">
-        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+            <td colspan="7">
+        	<img  src="images/line.png" style="margin:5px auto;display:block;width: 90%; height: auto;" />
         	</td>
         </tr>
     </table>
     </div>
-        
-    <div class="button-group">
-    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.information }">ฉลาดซื้อฉลาดเลือก</a>
-    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.earn }">สะสมคะแนน</a>
-    <a class="primary" data-role="button" data-bind="events: { click: earnbyidModel.burnPoint }">รับสิทธิ์</a>
-	</div>
+    <table style="width:100%"  class="message" >
+        <tr>
+            <td style="float:left;margin:10px 20px;">
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: earnbyidModel.information }">หน้าหลัก</span>
+            </td>
+            <td>
+                <span style="font-size:20px;font-weight: bold;" data-bind="events: { click: earnbyidModel.earn }">สะสมคะแนน</span>
+            </td>
+            <td style="float:right;margin:10px 20px;">
+                <span style="font-size:20px; color: #ffffff;" data-bind="events: { click: earnbyidModel.burnPoint }">รับสิทธิ์</span>
+            </td>
+        </tr>
+    </table>
     
     <!--
       <div class="circle-of-fifths">
@@ -65,33 +90,38 @@
             <img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" />
       </div>
     </div>
-    -->
-    
+   -->
+   
     <div id ="menumain" class="begincircle">
-        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 45px; height: auto;" data-bind="events: { click: earnbyidModel.clickedImage1 }" /></div>
-        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle3"><img  src="keyin_image/icon-keyin03-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle4"><img  src="keyin_image/icon-keyin04-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle5"><img  src="keyin_image/icon-keyin05-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle6"><img  src="keyin_image/icon-keyin06-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle7"><img  src="keyin_image/icon-keyin07-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle8"><img  src="keyin_image/icon-keyin08-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle9"><img  src="keyin_image/icon-keyin09-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle10"><img  src="keyin_image/icon-keyin10-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle11"><img  src="keyin_image/icon-keyin11-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle12"><img  src="keyin_image/icon-keyin12-on.png" style="width: 45px; height: auto;" /></div>
-        <div class="circle2text"><span>รักษ์โลกง่ายๆ <br>ทำได้ 24 ชั่วโมง</span></div>
+        <div class="circle1"><img  src="keyin_image/icon-keyin01-on.png" style="width: 70px; height: auto;" data-bind="events: { click: earnbyidModel.clickedImage1 }" /></div>
+        <div class="circle2"><img  src="keyin_image/icon-keyin02-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle3"><img  src="keyin_image/icon-keyin03-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle4"><img  src="keyin_image/icon-keyin04-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle5"><img  src="keyin_image/icon-keyin05-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle6"><img  src="keyin_image/icon-keyin06-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle7"><img  src="keyin_image/icon-keyin07-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle8"><img  src="keyin_image/icon-keyin08-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle9"><img  src="keyin_image/icon-keyin09-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle10"><img  src="keyin_image/icon-keyin10-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle11"><img  src="keyin_image/icon-keyin11-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle12"><img  src="keyin_image/icon-keyin12-on.png" style="width: 70px; height: auto;" /></div>
+        <div class="circle2text"><span style="font-size:20px;font-weight: bold;">
+            รักษ์โลกง่ายๆ <br>ทำได้ 24 ชั่วโมง
+            
+        </span></div>
 
     </div>
+        
     <div>
         <table style="height:350px">
           
         </table>
-        <div>
-            <span>test</span>
-        </div>
+        <div class="button-group" style="width:50%; margin:auto; text-align:center;">
+                    <a class="primary" data-role="backbutton" data-transition="slide:left reverse" >ยกเลิก</a>
+         </div>
     </div>
-    
+      
+      </div>
     
    
 </div>

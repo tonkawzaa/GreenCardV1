@@ -4,7 +4,7 @@ app.detailsproductsbyid = kendo.observable({
      onShow: function(e) {
         var item = e.view.params.id;
         //navigator.notification.alert(item);
-        
+               
         	$.ajax({
                type: "POST",
                url: "https://greenapi.odooportal.com/api/v1/product_by_id",
@@ -18,22 +18,22 @@ app.detailsproductsbyid = kendo.observable({
                      kendo.bind($("#product_by_idview"),product_by_id);
                      kendo.bind($("#product_by_id_main_img"),product_by_id);
                    kendo.bind($("#product_by_id_desc_to_publish"),product_by_id);
-                 /*
+                 
                    e.view.element.find("#scrollView_product_by_id").kendoMobileListView({
         			template: kendo.template($("#tmp").html()),
         			dataSource: result.data.certifications,           
                      });
-                   */             
+                            /*
                    e.view.element.find("#product_by_id_list_cert").kendoMobileScrollView({
         			template: kendo.template($("#product_by_id_list_cert_tmp").html()),
         			dataSource: result.data.certifications, 
-                    contentHeight: 60,
+                    contentHeight: 100,
                     enablePager: true,
                      });
                    
-                  
+                  */
                    
-                             },
+                },
                 
                 	
                 error: function(result) {
@@ -41,7 +41,7 @@ app.detailsproductsbyid = kendo.observable({
 
                          },
              });
-         
+         /*
          var data0 = kendo.observable({
             selectedfruit : "Gourmet",
             
@@ -55,7 +55,7 @@ app.detailsproductsbyid = kendo.observable({
                             dataType: "json",
                             success: function (result) {
                                 options.success(result.data);
-                               // navigator.notification.alert(result.data);
+                                navigator.notification.alert(result.data);
                                 
                             },
                             error: function(result) {
@@ -68,6 +68,7 @@ app.detailsproductsbyid = kendo.observable({
           
             
         });
+         */
         //kendo.bind($('#radioshop'),data0);
         
         	
@@ -122,7 +123,8 @@ app.detailsproductsbyid = kendo.observable({
                         data: JSON.stringify({ product_id: item ,
                                                shop_id : detailsshopModel.fields.selectedshop, }),
                         success: function(result) {                
-                            navigator.notification.alert(result);
+                            //navigator.notification.alert(result);
+                            app.mobileApp.navigate('components/detailsproductsuccess/view.html');
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    

@@ -19,10 +19,9 @@
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
   "Framework": "Cordova",
   "WP8TileTitle": "",
@@ -41,5 +40,6 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
-  ]
+  ],
+  "iOSDeploymentTarget": "6.0"
 }

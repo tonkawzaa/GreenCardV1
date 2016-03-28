@@ -30,12 +30,13 @@
         <div data-role="scrollview"
             data-source="app.burnPoint.eventgiftsdata"
             data-template="scrollview-template"
-            data-content-height="300px"
+            data-content-height="250px"
             id="scrollview">
     	</div>
        <script type="text/x-kendo-template" id="scrollview-template">
-            <img style="width:80%;" src="#: image_url #" />
-           
+           <a href="\\#components/detailsgifts/view.html?id=#: id #">
+            <img style="width:100%;" src="#: image_url #" />
+           </a>
      </script>
     
     <!--
@@ -69,7 +70,7 @@
 </script>
    -->
     
-   <div id="giftslist"></div>
+   <ul id="giftslist" class="grid"></ul>
        
      <script id="giftslisttmp" type="text/x-kendo-template">
            <a href="components/detailsgifts/view.html?id=#: id #">
@@ -87,5 +88,7 @@
             </table> 
          </a>
        </script>
+    
+    <table style="width:100%;"></table>
    
 </div>

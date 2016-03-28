@@ -14,6 +14,8 @@
             token = null;
         	token = localStorage.getItem("token");
             
+            
+            
             if(token != null){
             	page_start = 'components/welcome/view.html';
             }else{
@@ -31,10 +33,13 @@
         });
     };
 
+    
+    
     if (window.cordova) {
         document.addEventListener('deviceready', function() {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
+                
             }
 
             var element = document.getElementById('appDrawer');
