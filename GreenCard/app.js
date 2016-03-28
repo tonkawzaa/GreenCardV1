@@ -25,7 +25,7 @@
             
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 skin: 'nova',
-                transition: "zoom",
+                transition: "fade",
                 initial: page_start,
           
                 

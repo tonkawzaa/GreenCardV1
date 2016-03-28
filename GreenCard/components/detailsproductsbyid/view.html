@@ -1,4 +1,4 @@
-<div data-role="view" data-title="detailsproductsbyid" data-layout="main-nonav" data-model="app.detailsproductsbyid" data-show="app.detailsproductsbyid.onShow" data-after-show="app.detailsproductsbyid.afterShow">
+<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.detailsproductsbyid" data-show="app.detailsproductsbyid.onShow" data-after-show="app.detailsproductsbyid.afterShow">
 
     <div id = "headerdetailsproductsbyid">
 <table style="width:100%"  class="message" >
@@ -51,7 +51,7 @@
         </tr>
     </table>
     
-    
+    <!----    Begin to details -->
     <img style="margin:5px auto;display:block;width: 90%; height: auto;" id="product_by_id_main_img" data-bind="attr: { src: image_url }" />
     
      <div id="product_by_idview" class="message" >
@@ -59,12 +59,19 @@
          <span  style="font-size:20px;font-weight: bold;" data-bind="text: name"></span><br>
      </div>
 
-             <ul id="scrollView_product_by_id"  class="grid"></ul> 
+    <table  class="message" style="margin:0px 0px 0px 20%">
+        <tr>
+            <td>
+                  <ul id="scrollView_product_by_id"  class="grid_Cert"></ul>
+            </td>
+        </tr>
+    </table>
+             
            
             <script id="tmp" type="text/x-kendo-template">
                
-                    <p>#: name # </p>
-                    <img style="width:70px" src="#: image_url #"/>
+                    
+                    <img style="width:100px" src="#: image_url #"/>
               
             </script>
     <!--

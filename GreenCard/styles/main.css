@@ -405,74 +405,6 @@ button {
   } 
 
 
-.circle-of-fifths {
-
-  height: 100vw;
-  position: relative;
-
-}
-
-.key {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-.key > * {
-  position: absolute;
-}
-
-.key:nth-child(1) {
-  -webkit-transform: translate(0vw, -24.75vw);
-          transform: translate(0vw, -24.75vw);
-}
-.key:nth-child(2) {
-  -webkit-transform: translate(12.375vw, -21.43412874vw);
-          transform: translate(12.375vw, -21.43412874vw);
-}
-.key:nth-child(3) {
-  -webkit-transform: translate(21.43412874vw, -12.375vw);
-          transform: translate(21.43412874vw, -12.375vw);
-}
-.key:nth-child(4) {
-  -webkit-transform: translate(24.75vw, 0vw);
-          transform: translate(24.75vw, 0vw);
-}
-.key:nth-child(5) {
-  -webkit-transform: translate(21.43412874vw, 12.375vw);
-          transform: translate(21.43412874vw, 12.375vw);
-}
-.key:nth-child(6) {
-  -webkit-transform: translate(12.375vw, 21.43412874vw);
-          transform: translate(12.375vw, 21.43412874vw);
-}
-.key:nth-child(7) {
-  -webkit-transform: translate(0vw, 24.75vw);
-          transform: translate(0vw, 24.75vw);
-}
-.key:nth-child(8) {
-  -webkit-transform: translate(-12.375vw, 21.43412874vw);
-          transform: translate(-12.375vw, 21.43412874vw);
-}
-.key:nth-child(9) {
-  -webkit-transform: translate(-21.43412874vw, 12.375vw);
-          transform: translate(-21.43412874vw, 12.375vw);
-}
-.key:nth-child(10) {
-  -webkit-transform: translate(-24.75vw, 0vw);
-          transform: translate(-24.75vw, 0vw);
-}
-.key:nth-child(11) {
-  -webkit-transform: translate(-21.43412874vw, -12.375vw);
-          transform: translate(-21.43412874vw, -12.375vw);
-}
-.key:nth-child(12) {
-  -webkit-transform: translate(-12.375vw, -21.43412874vw);
-          transform: translate(-12.375vw, -21.43412874vw);
-}
-
-
 .begincircle
 {  
  position: relative; 
@@ -481,8 +413,8 @@ button {
 .circle1
 {  
   position: absolute;
-  top: 2vw;
-  left: 50%;
+  top: 0;
+  left: 50vw;
 }
 .circle2
 {
@@ -499,8 +431,8 @@ button {
 .circle4
 {
   position: absolute;
-  top: 26vw;
-  left: 74.5%;
+  top: 30vw;
+  right: 0vw;
 }
 .circle5
 {
@@ -535,8 +467,8 @@ button {
 .circle10
 {
   position: absolute;
-  top: 26vw;
-  left: 24%;
+  top: 30vw;
+  left: 0vw;
 }
 .circle9
 {
@@ -583,12 +515,90 @@ button {
 
 .grid li 
 { 
+     
      float: left;
      width: 50%; 
-     height: auto; 
+     height: 200px; 
     /* border-right: 1px dotted #CCC;
      border-bottom: 1px dotted #CCC;*/
      padding: 20px; 
     
  }
+
+.grid_Cert li 
+{ 
+    margin:0px auto;display:block;
+     float: left;
+     width: auto; 
+     height: 100px; 
+    
+    /* border-right: 1px dotted #CCC;
+     border-bottom: 1px dotted #CCC;*/
+     /* padding: 20px;  */
+    
+ }
+.bt_proid
+{
+    width: 50%; 
+    text-align: center; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+        .clock { position: absolute; top: 280px; left: 40vw; }
+		.clock-container { position: relative;}
+		.clock-12 { position: absolute; top: -125px; left: 0px; }
+		.clock-1 { position: absolute; top: -108.25px; left: 62.5px; }
+		.clock-2 { position: absolute; top: -62.5px; left: 108.25px; }
+		.clock-3 { position: absolute; top: 0px; left: 125px; }
+		.clock-4 { position: absolute; top: 62.5px; left: 108.25px; }
+		.clock-5 { position: absolute; top: 108.25px; left: 62.5px; }
+		.clock-6 { position: absolute; top: 125px; left: 0px; }
+		.clock-7 { position: absolute; top: 108.25px; left: -62.5px; }
+		.clock-8 { position: absolute; top: 62.5px; left: -108.25px; }
+		.clock-9 { position: absolute; top: 0px; left: -125px; }
+		.clock-10 { position: absolute; top: -62.5px; left: -108.25px; }
+		.clock-11 { position: absolute; top: -108.25px; left: -62.5px;}
+        .clock-text { position: absolute; top: 300px; left: 50%; transform: translate(-50%, 0); text-align: center; font-weight: bold; font-size: 20px; }
+        .btn-category-cancel { margin-top: 330px; margin-left: auto; margin-right: auto;}
+
+
+        @media(min-width: 450px) {
+			.clock { top: 300px; left: 45vw; }
+			.clock-12 { top: -180px; left: 0px; }
+			.clock-1 { top: -155.88px; left: 90px; }
+			.clock-2 { top: -90px; left: 155.88px; }
+			.clock-3 { top: 0px; left: 180px; }
+			.clock-4 { top: 90px; left: 155.88px; }
+			.clock-5 { top: 155.88px; left: 90px; }
+			.clock-6 { top: 180px; left: 0px; }
+			.clock-7 { top: 155.88px; left: -90px; }
+			.clock-8 { top: 90px; left: -155.88px; }
+			.clock-9 { top: 0px; left: -180px; }
+			.clock-10 { top: -90px; left: -155.88px; }
+			.clock-11 { top: -155.88px; left: -90px;}
+            .clock-text { position: absolute; top: 300px; left: 35%; transform: translate(-50%, 0); font-size: 30px; }
+            .btn-category-cancel { margin-top: 500px;}
+		}
+
+
+		@media(min-width: 700px) {
+			.clock { top: 300px; left: 48vw; }
+			.clock-12 { top: -300px; left: 0px; }
+			.clock-1 { top: -259.81px; left: 150px; }
+			.clock-2 { top: -150px; left: 259.81px; }
+			.clock-3 { top: 0px; left: 300px; }
+			.clock-4 { top: 150px; left: 259.81px; }
+			.clock-5 { top: 259.81px; left: 150px; }
+			.clock-6 { top: 300px; left: 0px; }
+			.clock-7 { top: 259.81px; left: -150px; }
+			.clock-8 { top: 150px; left: -259.81px; }
+			.clock-9 { top: 0px; left: -300px; }
+			.clock-10 { top: -150px; left: -259.81px; }
+			.clock-11 { top: -259.81px; left: -150px;}
+            .clock-text { position: absolute; top: 300px; left: 30%; transform: translate(-50%, 0); font-size: 30px; }
+            .btn-category-cancel { margin-top: 720px;}
+		}
+
+
 

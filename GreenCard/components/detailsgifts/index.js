@@ -41,9 +41,13 @@ app.detailsgifts = kendo.observable({
                             navigator.notification.alert(result);    
                         },
                 });
+         
+        
         
         var data1 = {
             title: item,
+           
+            
             submit: function() {
                 //navigator.notification.alert(item);
                 var header_token = null;
@@ -61,7 +65,13 @@ app.detailsgifts = kendo.observable({
                 		data: JSON.stringify({ gift_id: item }),
                         success: function(result) {
                             //navigator.notification.alert(result.data);
+                            
+                     
+                            
                             kendo.bind($('#sumitgift_code'),result.data);
+                            
+                            //var newDate = kendo.timezone.convert(result.data.create_date, date.getTimezoneOffset(), "Etc/UTC");
+                           
                         },
                         error: function(result) {
                             navigator.notification.alert(result.error_message);    
@@ -83,7 +93,7 @@ app.detailsgifts = kendo.observable({
         };
         kendo.bind($('#submitfunc'),data1);
         kendo.bind($('#close_func'),data1);
-        //kendo.bind($('#data1Content'),data1);
+        kendo.bind($('#data1Content'),data1);
           
             $.ajax({
                   type: "POST",

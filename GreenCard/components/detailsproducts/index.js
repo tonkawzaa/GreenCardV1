@@ -13,15 +13,18 @@ app.detailsproducts = kendo.observable({
                data: JSON.stringify({ barcode: item }),
                success: function(result) {
                             
-                navigator.notification.alert(result.data.certifications);
+                //navigator.notification.alert(result.data);
                             
-                     var product_by_barcode  = result.data;
-                     kendo.bind($("#view1"),product_by_barcode);
+                var product_by_barcode  = result.data;
+                kendo.bind($("#detailsproducts_main_img"),product_by_barcode);
+                kendo.bind($("#detailsproductsview"),product_by_barcode);
+                kendo.bind($("#detailsproducts_desc_to_publish"),product_by_barcode);
                    
-                   e.view.element.find("#scrollView").kendoMobileListView({
-        			template: kendo.template($("#tmp").html()),
-        			dataSource: result.data.certifications,
+                   e.view.element.find("#scrollView_detailsproducts").kendoMobileListView({
+        			template: kendo.template($("#scrollView_detailsproducts_tmp").html()),
+        			dataSource: result.data.certifications,          
                      });
+                   
                              },
                 
                 	
@@ -30,6 +33,7 @@ app.detailsproducts = kendo.observable({
 
                          },
              });
+        /*
          var data0 = kendo.observable({
             selectedfruit : "Gourmet",
             
@@ -57,7 +61,7 @@ app.detailsproducts = kendo.observable({
             
         });
         kendo.bind($('#radioshop'),data0);
-        	
+        	*/
             var header_token = null;
             
             var token = null;
@@ -77,35 +81,67 @@ app.detailsproducts = kendo.observable({
                             navigator.notification.alert(result);    
                         }
                 });
+              var detailsshop_detailsproducts_Model = kendo.observable({
+        
+        fields: {
+            selectedshop: 3,
+        },
+
+        }); 
+        kendo.bind($('#radioselectedshop_detailsproducts'),detailsshop_detailsproducts_Model);
          
          var confirmsdata = {
                 confirms: function() {
                     
                     //navigator.notification.alert(item);
-                    //navigator.notification.alert(data0.selectedfruit);
+                    //navigator.notification.alert(detailsshop_detailsproducts_Model.fields.selectedshop);
                     
-                  $.ajax({
+               $.ajax({
+               type: "POST",
+               url: "https://greenapi.odooportal.com/api/v1/product_by_barcode",
+               contentType: "application/json",
+               data: JSON.stringify({ barcode: item }),
+               success: function(result) {
+                   var product_id=result.data.id;
+                  // navigator.notification.alert(product_id);
+                            
+                      $.ajax({
                         type: "POST",
-                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        url: "https://greenapi.odooportal.com/api/v1/earn",
                         contentType: "application/json",
                 		headers: {'Authorization' : header_token},
-                        data: JSON.stringify({ product_id: item ,
-                                               shop_id : data0.selectedfruit, }),
+                        data: JSON.stringify({ product_id: product_id ,
+                                               shop_id : detailsshop_detailsproducts_Model.fields.selectedshop, }),
                         success: function(result) {                
-                            navigator.notification.alert(result);
+                            //navigator.notification.alert(result);
+                            app.mobileApp.navigate('components/detailsproductsuccess/view.html');
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
                         }
-                    });
+                     });
+
+               
+               },
+                
+                	
+                error: function(result) {
+                      navigator.notification.alert(result.error_message);
+
+                         },
+                 });
+               /*
+                 
+                    */
                     
                 },
              gotoearn : function() {
                  app.mobileApp.navigate('components/earn/view.html');
                  },
         };
+                    
         kendo.bind($('#confirms_earn'),confirmsdata);
-        kendo.bind($('#selectshops'),confirmsdata);
+        //kendo.bind($('#selectshops'),confirmsdata);
       
     },
     afterShow: function() {},
