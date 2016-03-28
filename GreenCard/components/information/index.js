@@ -97,6 +97,7 @@ app.information = kendo.observable({
         burnPoint: function() {
 				app.mobileApp.navigate('components/burnPoint/view.html');
         },
+  
          destroyListView: function() {	
             	navigator.notification.alert("destroyListView");
         },
