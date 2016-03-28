@@ -574,15 +574,18 @@ button {
     width: 4em; height: 4em;
     margin: -2em;
 }
-.rotate{
-    transform: rotate(-40deg);
+.headerdetailsgifts
+{  
+  position: absolute;
+  top: 200px;
+  left: 0%;
 }
 
 .grid li 
 { 
      float: left;
-     width: 45%; 
-     height: 200px; 
+     width: 50%; 
+     height: auto; 
     /* border-right: 1px dotted #CCC;
      border-bottom: 1px dotted #CCC;*/
      padding: 20px; 

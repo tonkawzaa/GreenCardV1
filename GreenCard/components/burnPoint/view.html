@@ -1,31 +1,55 @@
-<div data-role="view"  data-title="BurnPoint" data-reload="true" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
+<div data-role="view"  data-title="" data-reload="true" data-layout="main-nonav" data-model="app.burnPoint" data-show="app.burnPoint.onShow" data-after-show="app.burnPoint.afterShow">
 
     <div id = "headerburnPoint">
-    <table style="width:100%">
+   <table style="width:100%"  class="message" >
     <tr>
-    	<td>
-        <img  src="images/pic-logo-home.png" style="margin:10px 10px;width: 30px; height: auto;" />
+    	<td style="width:23%">
+        <img  src="images/pic-logo-home.png" style="width: 30px; height: auto;" />
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu02.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ฉลากสิ่งแวดล้อม</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu03.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ข่าวสาร</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
         </td>
         <td style="float:right;margin:10px 10px;">
         
-            <span class="form_reg"> คะแนนสะสม  <br></span>
-              <span class="form_reg" data-bind=" text: data"></span>
+            <span class="form_reg"><b> คะแนนสะสม</b>  <br></span>
+            <span class="form_reg" style="font-size:12px;font-weight: bold;" data-bind="text: data" ></span>
             
         </td>
     </tr>
         <tr>
-            <td colspan="2">
-        	<img  src="images/line.jpg" style="margin:10px auto;display:block;width: 90%; height: auto;" />
+            <td colspan="7">
+        	<img  src="images/line.png" style="margin:5px auto;display:block;width: 90%; height: auto;" />
         	</td>
         </tr>
     </table>
     </div>
-    
-      <div class="button-group">
-    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.information }">ฉลาดซื้อฉลาดเลือก</a>
-    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</a>
-    <a class="primary" data-role="button" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</a>
-	</div>
+    <table style="width:100%"  class="message" >
+        <tr>
+            <td style="float:left;margin:10px 20px;">
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: burnPointModel.information }">หน้าหลัก</span>
+            </td>
+            <td>
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: burnPointModel.earn }">สะสมคะแนน</span>
+            </td>
+            <td style="float:right;margin:10px 20px;">
+                <span style="font-size:20px;font-weight: bold;" data-bind="events: { click: burnPointModel.burnPoint }">รับสิทธิ์</span>
+            </td>
+        </tr>
+    </table>
    
         <div data-role="scrollview"
             data-source="app.burnPoint.eventgiftsdata"
@@ -35,7 +59,7 @@
     	</div>
        <script type="text/x-kendo-template" id="scrollview-template">
            <a href="\\#components/detailsgifts/view.html?id=#: id #">
-            <img style="width:100%;" src="#: image_url #" />
+            <img style="width:96%;margin:0px auto;display:block;" src="#: image_url #" />
            </a>
      </script>
     
@@ -73,22 +97,12 @@
    <ul id="giftslist" class="grid"></ul>
        
      <script id="giftslisttmp" type="text/x-kendo-template">
-           <a href="components/detailsgifts/view.html?id=#: id #">
-            <table>
-                <tr>
-                	<td>
-                    <img style="width:80%;" src="#: image_url #"/>
-                    </td>
-                    <td>
-                     <p> #: name # </p>
-                    id = #: id # <br>
-                    required_points = #: required_points # 
-                    </td>
-                </tr>
-            </table> 
+           <a href="components/detailsgifts/view.html?requiredpoints=#: required_points#&id=#: id #"> 
+                    <img style="width:100%;" src="#: image_url #"/>
          </a>
        </script>
     
     <table style="width:100%;"></table>
+    <div style="height:30vh"></div>
    
 </div>

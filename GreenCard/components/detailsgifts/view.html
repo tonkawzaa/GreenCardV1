@@ -1,48 +1,207 @@
-<div data-role="view" data-title="detailsgifts" data-layout="main-nonav" data-model="app.detailsgifts" data-show="app.detailsgifts.onShow" data-after-show="app.detailsgifts.afterShow">
+<div data-role="view" data-title="" data-layout="main-nonav" data-model="app.detailsgifts" data-show="app.detailsgifts.onShow" data-after-show="app.detailsgifts.afterShow">
 
-    <div  class="details-view" style="height:100vh">
-    <div id="data2Content" >  
-        id = <span data-bind="text: id"></span><br>
-    	name = <span data-bind="text: name"></span><br>
-	</div>        
+    <div  class="details-view">
+    <div id = "headerdetailsgifts">
+   <table style="width:100%"  class="message" >
+    <tr>
+    	<td style="width:23%">
+        <img  src="images/pic-logo-home.png" style="width: 30px; height: auto;" />
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu02.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ฉลากสิ่งแวดล้อม</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu03.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ข่าวสาร</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
         
-	<div id="divshowimage" >
-   	<img style="width:80%;" data-bind="attr: { src: image_mobile }" />
-	</div>
+            <span class="form_reg"><b> คะแนนสะสม</b>  <br></span>
+            <span class="form_reg" style="font-size:12px;font-weight: bold;" data-bind="text: data" ></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="7">
+        	<img  src="images/line.png" style="margin:5px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+    </div>
+    <table style="width:100%"  class="message" >
+        <tr>
+            <td style="float:left;margin:10px 20px;">
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: detailsgiftsModel.information }">หน้าหลัก</span>
+            </td>
+            <td>
+                <span style="font-size:20px;color: #ffffff;" data-bind="events: { click: detailsgiftsModel.earn }">สะสมคะแนน</span>
+            </td>
+            <td style="float:right;margin:10px 20px;">
+                <span style="font-size:20px;font-weight: bold;" data-bind="events: { click: detailsgiftsModel.burnPoint }">รับสิทธิ์</span>
+            </td>
+        </tr>
+    </table>
+    
 
-	<div id="submitfunc" class="form-view">
+        
+        <div id="data2Content" class="begincircle" > 
+           
+                <img style="width:96%;height:250px;margin:0px auto;display:block;"  data-bind="attr: { src: image_url }" />
+           
+            <div>
+                <table class="headerdetailsgifts">
+                <tr>
+                    <td style="width:25%;">
+                        <img  style="width:80%;margin:0px auto;display:block;" data-bind="attr: { src: supplier_image_url }" />
+                    </td>
+                    <td style="vertical-align:bottom;">
+                        <span style="font-size:20px;font-weight: bold;" data-bind="text: name"></span><br>
+                    </td>
+                </tr>
+            </table>
+                
+                <table>
+                    <tr style="height:70px;">
+                        <td> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <p style="font-size:16px;font-weight: bold;">
+                            รายละเอียดสินค้า
+                        </p>
+                      
+                        <span data-bind="html: desc_to_publish" ></span> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        	
+	    </div> 
+        
+        <div id="detailsgiftspoint" class="message" style="font-size:20px;font-weight: bold;margin:40px 0px 0px 0px ;">
+            <span >** รหัสจะมีอายุ 1 ชั่งโมงหลังกดใช้</span> 
+            <span data-bind="text: point" ></span> 
+            <span> Point**</span>
+        </div>
+        
+        
+     
+
+	    <div id="submitfunc" class="form-view">
         <form>
 			<div class="button-group">
-                <a data-role="button" data-transition="slide" data-bind="events: { click: cancel }">Cancel</a>
-                <a class="primary" data-role="button" data-bind="events: { click: submit }">ตกลง</a>
+                <a  class="primary" data-role="button" data-bind="events: { click: submit }">ตกลง</a>
+                <a  class="primary" data-role="button" data-transition="slide" data-bind="events: { click: cancel }">ยกเลิก</a>
             </div>
        </form>
   	</div>
+        
+        <div style="height:30vh"></div>
+        
+        
     </div>
 
+    
+    
+    <!-----     for show when sumit --------->
+    
+    
+        
+        
+    
     <div  class="sumit-view" style="height:100vh;display:none;" class ="message">
-        <div id="sumitshowimage" >
-   			<img data-bind="attr: { src: image_mobile }" />
-		</div>
         
-         <div id="sumitContent" >  
-    	 <span data-bind="text: name"></span><br>
-		</div>
-
-        <br>
-		<br>
-		<br>
-
-		<div id="sumitgift_code" >  
-    	 <span data-bind="text: gift_code"></span><br>
-		</div>
+        <div id = "headerdetailsgiftssumit">
+           <table style="width:100%"  class="message" >
+    <tr>
+    	<td style="width:23%">
+        <img  src="images/pic-logo-home.png" style="width: 30px; height: auto;" />
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu02.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ฉลากสิ่งแวดล้อม</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="width:23%">
+           <img  src="images/icon-menu03.png" style="width: 30px; height: auto;" /> <br>
+            <span class="form_reg" style="font-size:12px;"><b>ข่าวสาร</b></span>
+        </td>
+        <td>
+            <img  src="images/pic-line-small.png" style="height: 50px;" />
+        </td>
+        <td style="float:right;margin:10px 10px;">
+        
+            <span class="form_reg"><b> คะแนนสะสม</b>  <br></span>
+            <span class="form_reg" style="font-size:12px;font-weight: bold;" data-bind="text: data" ></span>
+            
+        </td>
+    </tr>
+        <tr>
+            <td colspan="7">
+        	<img  src="images/line.png" style="margin:5px auto;display:block;width: 90%; height: auto;" />
+        	</td>
+        </tr>
+    </table>
+        </div>
+        
+      <table  style="width:90%;background-color: #fff;margin:5px auto;display:block;"  class="message" >
+          <tr>
+              <td>
+                  <div id="sumitContent" >
+                  <img style="width:100%;height:200px;margin:0px auto;display:block;"  data-bind="attr: { src: image_url }" />
+            	  <span style="font-size:16px;font-weight: bold;" data-bind="text: name"></span><br>
+        		</div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="sumitgift_code" >
+                 <span style="font-size:16px;font-weight: bold;">
+                     รับสิทธิ์เมื่อ
+                 </span>
+                 <span style="font-size:16px;font-weight: bold;" data-bind="text: create_date"></span><br>
+                 <p style="margin:40px auto;"></p>     
+                 <span style="font-size:32px;font-weight: bold;color:#008745;margin:50px auto;" data-bind="text: gift_code"></span><br>
+                  
+                  </div>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <p style="font-size:16px;font-weight: bold; margin:40px 0px 0px 0px;"> กรุณาแสดงรหัสนี้ให้กับร้านค้าเพื่อใช้สิทธิ์ </p>
+		          <p style="font-size:16px;font-weight: bold;">  ขอบคุณ  </p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="close_func" class="button-group">
+		            <a class="primary" data-role="button" data-bind="events: { click: close_func }">ปิด</a>
+		          </div>
+              </td>
+          </tr>
+      </table>
+         
+      
 		
-		<p> กรุณาแสดงรหัสนี้ให้กับร้านค้าเพื่อใช้สิทธิ์ </p>
-		<p>  ขอบคุณ  </p>
+		
         
-		<div id="close_func" class="form-view">
-		<a class="primary" data-role="button" data-bind="events: { click: close_func }">ตกลง</a>
-		</div>
+		
 
     </div>
 

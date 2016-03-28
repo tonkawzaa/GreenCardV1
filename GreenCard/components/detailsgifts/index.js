@@ -2,9 +2,45 @@
 
 app.detailsgifts = kendo.observable({
      onShow: function(e) {
-        var item = e.view.params.id;  
+        var viewparams = e.view.params; 
+        var item = viewparams.id; 
+        var requiredpoints = viewparams.requiredpoints;
+        
+         var datapoint = {
+             point : requiredpoints,
+         }
+         
+         
+         //navigator.notification.alert(requiredpoints);
+         //navigator.notification.alert(item);
+         kendo.bind($("#detailsgiftspoint"),datapoint);
         var activeView = '.details-view';
          $(activeView).show().siblings().hide();
+         
+         var header_token = null;
+            
+           	var token = null;
+        	token = localStorage.getItem("token");
+            header_token =  "Bearer "+token;
+            //navigator.notification.alert(header_token);
+            $.ajax({
+                        type: "POST",
+                        url: "https://greenapi.odooportal.com/api/v1/points",
+                        contentType: "application/json",
+                		headers: {'Authorization' : header_token},
+                        success: function(result) {                
+                            //navigator.notification.alert(result.data);
+                            
+                            //result.set("data","55555" );
+                            
+                          
+                            kendo.bind($("#headerdetailsgifts"),result);
+                            kendo.bind($("#headerdetailsgiftssumit"),result);
+                        },
+                        error: function(result) {
+                            navigator.notification.alert(result);    
+                        },
+                });
         
         var data1 = {
             title: item,
@@ -57,20 +93,12 @@ app.detailsgifts = kendo.observable({
                   dataType: "json",
                   success: function (result) {
                       
-                      //navigator.notification.alert(result.data.image_mobile)
+                      //navigator.notification.alert(result.data)
                       
                       var detailsgifts = result.data;
                       kendo.bind($('#data2Content'),detailsgifts);
                       kendo.bind($('#sumitContent'),detailsgifts);
-                      
-                      
-                      var image64 = {
-                                //image_mobile: "data:image/jpeg;base64,"+result.data.image_mobile,
-                                  image_mobile: result.data.image_url,
-                                    }
-                          //result.data;
-                      kendo.bind($('#divshowimage'),image64);
-                      kendo.bind($('#sumitshowimage'),image64);
+                    
                             				}
                     }); 
         
@@ -80,3 +108,29 @@ app.detailsgifts = kendo.observable({
     afterShow: function() {}
 });
 
+(function(parent) {
+    
+
+    var detailsgiftsModel = kendo.observable({
+       
+        information: function() {
+				app.mobileApp.navigate('components/information/view.html');
+        },
+         earn: function() {
+				app.mobileApp.navigate('components/earn/view.html');
+        }, 
+        burnPoint: function() {
+				app.mobileApp.navigate('components/burnPoint/view.html');
+        },
+        
+        clickedImage : function()
+        {
+            navigator.notification.alert("clickedImage");
+             //app.mobileApp.navigate('components/earnbyid/earnby1.html');
+        },
+  
+       
+    });
+
+    parent.set('detailsgiftsModel', detailsgiftsModel);
+})(app.detailsgifts);
