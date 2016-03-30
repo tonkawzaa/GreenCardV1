@@ -1,7 +1,9 @@
 'use strict';
 
 app.reigister = kendo.observable({
-    onShow: function() {},
+    onShow: function() {
+        
+    },
     afterShow: function() {}
 });
 
@@ -68,18 +70,27 @@ app.reigister = kendo.observable({
                         },
                         error: function(result) {
                             navigator.notification.alert(result);
+                            //navigator.notification.alert("กรอกข้อมูลไม่ถูกต้อง");
                             
                         }
                 });
         },
         
-         toggleView: function() {
+         toggleView: function(e) {
                 mode = mode === 'signup' ? 'register' : 'signup';
                 var activeView = mode === 'signup' ? '.signup1-view' : '.signup2-view';
-                $(activeView).show().siblings().hide();
+                 var validator = $("#signup1_form").data("kendoValidator");
+            
+                    if (validator.validate()) {
+                        //navigator.notification.alert(validator.validate());
+                        $(activeView).show().siblings().hide();
+                    }else{
+                       //navigator.notification.alert(validator.validate());
+                    }
+                
             },
-        gohome: function() {
-                app.mobileApp.navigate('components/home/view.html');
+        termofuse: function() {
+                app.mobileApp.navigate('components/termsofuse/view.html');
             },
         gowelcome: function() {
                 app.mobileApp.navigate('components/welcome/view.html');

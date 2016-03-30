@@ -1,7 +1,7 @@
 <div data-role="view" data-title="" data-layout="main" data-model="app.reigister" data-show="app.reigister.onShow" data-after-show="app.reigister.afterShow">
     
     <div  class="signup1-view" style="height:100vh">
-        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.gohome }">
+        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.termofuse }">
         <p style="margin:10px 20px;font-size:25px;"class="message"><b>
             ลงทะเบียน
         </b></p>
@@ -10,54 +10,14 @@
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         </div>
- <!--
-        <form >
-            <ul class="form-content" data-role="listview" data-style="inset">
-                <li class="form-content-item">
 
-
-                    <label>
-
-                        <span  class="form_reg">อีเมล์ของคุณ :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.email" placeholder="XXX@XXX.com" type="text">
-                    </label>
-
-                </li>
-                
-                <li class="form-content-item">
-
-
-                    <label>
-
-                        <span  class="form_reg">รหัสผ่าน :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.password1" placeholder="password" type="password">
-                    </label>
-
-                </li>
-                <li class="form-content-item">
-
-
-                    <label>
-
-                        <span  class="form_reg">ยืนยันรหัสผ่าน :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.confirmpassword" placeholder="confirmpassword" type="password">
-                    </label>
-
-                </li>
- 
-                
-            </ul>           
-        </form>
-        -->
-        
-        <form>
+        <div id="signup1_form" data-role="validator" novalidate="novalidate">
+            <form>
                 <table style="width:95%;margin:20px 10px 20px 10px;" class="message" >
-                   <tr class="backgroundimg" style="height:8vh;">
+                   <tr class="backgroundimg" style="height:20px;">
                        <td>
-                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.email" placeholder="อีเมล์ของคุณ" type="email">
+                          <input id="email" name="email"  style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.email" required validationMessage="***" placeholder="อีเมล์ของคุณ" type="email">
+                           <span class="k-invalid-msg" data-for="email"></span>
                        </td>
                   </tr>
                     <tr style="height:3vh;">
@@ -65,9 +25,10 @@
                           
                       </td>
                   </tr>
-                  <tr class="backgroundimg" style="height:8vh;">
+                  <tr class="backgroundimg" style="height:20px;">
                       <td>
-                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.password1" placeholder="รหัสผ่าน" type="password">
+                          <input id="password1" name="password1"  style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.password1" required validationMessage="***" placeholder="รหัสผ่าน" type="password">
+                          <span class="k-invalid-msg" data-for="password1"></span>
                       </td>
                   </tr>
                       <tr style="height:3vh;">
@@ -75,21 +36,25 @@
                           
                       </td>
                   </tr>
-                     <tr class="backgroundimg" style="height:8vh;">
+                     <tr class="backgroundimg" style="height:20px;">
                       <td>
-                          <input style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.confirmpassword" placeholder="ยืนยันรหัสผ่าน" type="password">
+                          <input id="confirmpassword" name="confirmpassword"  style="width:80%;"class="form_reg" data-bind="value: reigisterModel.fields.confirmpassword" required validationMessage="***" placeholder="ยืนยันรหัสผ่าน" type="password">
+                          <span class="k-invalid-msg" data-for="confirmpassword"></span>
                       </td>
                   </tr>
-                  <tr style="height:25vh;">
+                  <tr style="height:40px;">
                       
                   </tr>
                     
                     
                 </table>
-             </form>
-         <div class="button-group" >
+                <div class="button-group" >
                 <a class="primary" style="height:8vh;" data-role="button" data-bind="events: { click: reigisterModel.toggleView }">ถัดไป >>></a>
-            </div>
+                </div>
+             </form>
+             
+         </div>
+        
     </div>
     
     <div  class="signup2-view" style="display:none;height:100vh;">
@@ -102,95 +67,9 @@
         <img src="images/pic-dot.png" style="width: 15px; height: auto;" >
         <img src="images/pic-dot-line.png" style="width: 15px; height: auto;" >
         </div>
-        <!--
-        <form >
-        <ul class="form-content" data-role="listview" data-style="inset">
-            
-            <li class="form-content-item">
 
-
-                    <label>
-
-                       <p>ชื่อ :</p>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text">
-                    
-
-                </li>
-                <li class="form-content-item">
-
-
-                    <label>
-
-                       <span  class="form_reg">นามสกุล :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.lastname"  type="text">
-                    </label>
-
-                </li>
-                
-                <li class="form-content-item">
-
-
-                    <label>
-
-                        <span  class="form_reg">เบอร์โทรศัพท์ :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.mobile"  type="tel">
-                    </label>
-
-                </li>
-                <li class="form-content-item">
-                    <label>
-
-                        <span  class="form_reg">เพศ :</span>
-
-                        <select class="form_reg" data-bind="value: reigisterModel.fields.gender" data-role="dropdownlist">
-                            <option value="M">ชาย</option>
-                            <option value="F">หญิง</option>
-                        </select>
-                    </label>
-                </li>
-                
-                <li class="form-content-item">
-
-
-                    <label>
-
-                       <span  class="form_reg"> วันเกิด :</span>
-
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.birthdate" type="date">
-                    </label>
-
-                </li>
-                <li class="form-content-item">
-
-
-                    <label>
-
-                        <span  class="form_reg">หมายเลขบัตรประชาชน :</span>
-                        <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text">
-                    </label>
-
-                </li>
-                <li class="form-content-item">
-                    <label>
-
-                       <span  class="form_reg"> อาชีพ:</span>
-
-                        <select class="form_reg" data-bind="value: reigisterModel.fields.occupation" data-role="dropdownlist">
-                            <option value="0">ราชการ</option>
-                            <option value="1">เอกชน</option>
-                            <option value="2">รัฐวิสาหกิจ</option>
-                            <option value="3">อิสระ</option>
-                            <option value="4">NGO</option>
-                            <option value="5">นิสิต-นักศึกษา </option>
-                        </select>
-                    </label>
-                </li>
-            </ul> 
-        </form>
-        -->
+     <div id="signup2_form" data-role="validator" novalidate="novalidate">
+      <form>
         <table style="width:100%;" >
          <tr>
              <td>
@@ -199,7 +78,8 @@
                 </p>
             </td>
              <td>
-                 <input class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text">
+                 <input id="firstname" name="firstname" class="form_reg" data-bind="value: reigisterModel.fields.firstname"  type="text" required validationMessage="***">
+                 <span class="k-invalid-msg" data-for="firstname"></span>
              </td>
          </tr>
           <tr>
@@ -214,7 +94,9 @@
                 </p>
             </td>
              <td>
-                 <input class="form_reg" data-bind="value: reigisterModel.fields.lastname"  type="text">
+                 <input id="lastname" name="lastname" class="form_reg" data-bind="value: reigisterModel.fields.lastname"  type="text" required validationMessage="***">
+                 <span class="k-invalid-msg" data-for="lastname"></span>
+                 
              </td>
          </tr>
             <tr>
@@ -229,7 +111,8 @@
                 </p>
             </td>
              <td>
-                 <input class="form_reg" data-bind="value: reigisterModel.fields.mobile"  type="tel">
+                 <input id="mobile" name="mobile" class="form_reg" data-bind="value: reigisterModel.fields.mobile"  type="tel" required validationMessage="***">
+                 <span class="k-invalid-msg" data-for="mobile"></span>
              </td>
          </tr>
             
@@ -238,7 +121,7 @@
                 <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
             </td>
          </tr>
-
+            <!--
          <tr>
              <td>
                 <p>
@@ -275,7 +158,7 @@
                 <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
             </td>
          </tr>
-            
+            -->
          <tr>
              <td>
                 <p>
@@ -283,7 +166,8 @@
                 </p>
             </td>
              <td>
-                 <input class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text">
+                 <input id="citizenid" name="citizenid"  class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text" required validationMessage="***">
+                 <span class="k-invalid-msg" data-for="citizenid"></span>
              </td>
          </tr>
             <tr>
@@ -291,6 +175,7 @@
                 <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
             </td>
          </tr>
+            <!--
          <tr>
              <td>
                 <p>
@@ -313,7 +198,7 @@
                 <img  src="images/line.png" style="margin:0px auto;display:block;width: 90%; height: auto;" />
             </td>
          </tr>
-            
+            -->
             
             
         </table>
@@ -323,5 +208,7 @@
          <div class="button-group">
                 <a class="primary" data-role="button" data-bind="events: { click: reigisterModel.submit }" >ถัดไป >>></a>
            </div>
+      </form>
+     </div>
     </div>
 </div>

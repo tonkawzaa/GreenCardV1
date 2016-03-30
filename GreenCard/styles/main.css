@@ -537,6 +537,19 @@ button {
      /* padding: 20px;  */
     
  }
+
+span.k-widget.k-tooltip-validation {
+                    
+                    width: 160px;
+                    text-align: left;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                    box-shadow: none;
+                    color: red;
+                }
+
 .bt_proid
 {
     width: 50%; 
