@@ -6,23 +6,10 @@ app.earn = kendo.observable({
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     //navigator.notification.alert(result.text);
-                    var item = result.text;
-                    var navi_parameters = "components/detailsproducts/view.html?id="+item;
-                    $.ajax({
-                       type: "POST",
-                       url: "https://greenapi.odooportal.com/api/v1/product_by_id",
-                       contentType: "application/json",
-                       data: JSON.stringify({ id: item }),
-                       success: function(result) {
-                                    
-                        navigator.notification.alert(result);
-                       //app.mobileApp.navigate(navi_parameters);             
-                           
-                        },
-                        error: function(result) {
-                              navigator.notification.alert("ไม่พบสินค้าในฐานข้อมูล");
-                                 },
-                     });
+                   
+                    var navi_parameters = "components/detailsproducts/view.html?id="+result.text;
+                    app.mobileApp.navigate(navi_parameters);
+                 
                    
                 }, 
                 function(error) {

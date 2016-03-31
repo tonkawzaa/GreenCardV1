@@ -13,23 +13,32 @@ app.detailsproducts = kendo.observable({
                data: JSON.stringify({ barcode: item }),
                success: function(result) {
                             
-                //navigator.notification.alert(result.data);
-                            
-                var product_by_barcode  = result.data;
-                kendo.bind($("#detailsproducts_main_img"),product_by_barcode);
-                kendo.bind($("#detailsproductsview"),product_by_barcode);
-                kendo.bind($("#detailsproducts_desc_to_publish"),product_by_barcode);
+                //navigator.notification.alert(result.data.id);
+                            if(result.data.id){
+                                
+                                 var product_by_barcode  = result.data;
+                                 kendo.bind($("#detailsproducts_main_img"),product_by_barcode);
+                                 kendo.bind($("#detailsproductsview"),product_by_barcode);
+                                 kendo.bind($("#detailsproducts_desc_to_publish"),product_by_barcode);
+                                       
+                                e.view.element.find("#scrollView_detailsproducts").kendoMobileListView({
+                            	template: kendo.template($("#scrollView_detailsproducts_tmp").html()),
+                                dataSource: result.data.certifications,          
+                                });
+                                
+                            }else{
+                                navigator.notification.alert("ไม่พบสินค้าในฐานข้อมูล");
+                                app.mobileApp.navigate('components/earn/view.html');
+                            }
+               
                    
-                   e.view.element.find("#scrollView_detailsproducts").kendoMobileListView({
-        			template: kendo.template($("#scrollView_detailsproducts_tmp").html()),
-        			dataSource: result.data.certifications,          
-                     });
                    
-                             },
+              },
                 
                 	
                 error: function(result) {
-                      navigator.notification.alert(result.error_message);
+                      //navigator.notification.alert(result.error_message);
+                    navigator.notification.alert("ไม่พบสินค้าในฐานข้อมูล");
 
                          },
              });
@@ -113,11 +122,28 @@ app.detailsproducts = kendo.observable({
                         data: JSON.stringify({ product_id: product_id ,
                                                shop_id : detailsshop_detailsproducts_Model.fields.selectedshop, }),
                         success: function(result) {                
-                            //navigator.notification.alert(result);
-                            app.mobileApp.navigate('components/detailsproductsuccess/view.html');
+                            if(result.data.new_points)
+                            {
+                                //navigator.notification.alert("detailsproductsuccess");
+                                app.mobileApp.navigate('components/detailsproductsuccess/view.html');
+                            }else
+                            if(result.data.error_code=="EarnError01")
+                            {
+                                navigator.notification.alert("วันนี้คุณสะสมแต้มสินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="EarnError02")
+                            {
+                                navigator.notification.alert("เดือนนี้คุณสะสมแต้มสินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="EarnError03")
+                            {
+                                navigator.notification.alert("วันนี้สินค้าครบลิมิต");
+                            }else if(result.data.error_code=="EarnError04")
+                            {
+                                navigator.notification.alert("เดือนนี้สินค้าครบลิมิต");
+                            }
                         },
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);    
+                            navigator.notification.alert("ระบบผิดพลาด")    
                         }
                      });
 

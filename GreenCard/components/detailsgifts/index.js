@@ -66,19 +66,42 @@ app.detailsgifts = kendo.observable({
                         success: function(result) {
                             //navigator.notification.alert(result.data);
                             
-                     
+                             if(result.data.new_points)
+                            {
+                                kendo.bind($('#sumitgift_code'),result.data);
+                                var activeView = '.sumit-view';
+                                $(activeView).show().siblings().hide();
+                                
+                            }else
+                            if(result.data.error_code=="BurnError01")
+                            {
+                                navigator.notification.alert("วันนี้คุณรับสิทธิ์สินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="BurnError02")
+                            {
+                                navigator.notification.alert("เดือนนี้คุณรับสิทธิ์สินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="BurnError03")
+                            {
+                                navigator.notification.alert("วันนี้รับสิทธิ์ครบลิมิต");
+                            }else if(result.data.error_code=="BurnError04")
+                            {
+                                navigator.notification.alert("เดือนนี้รับสิทธิ์ครบลิมิต");
+                            }else if(result.data.error_code=="BurnError05")
+                            {
+                                navigator.notification.alert("แต้มของท่านไม่พอ");
+                            }
                             
-                            kendo.bind($('#sumitgift_code'),result.data);
+                            
                             
                             //var newDate = kendo.timezone.convert(result.data.create_date, date.getTimezoneOffset(), "Etc/UTC");
                            
                         },
                         error: function(result) {
-                            navigator.notification.alert(result.error_message);    
+                            //navigator.notification.alert(result);    
+                            navigator.notification.alert("ข้อมูลผิดพลาด");    
+                            app.mobileApp.navigate('components/burnPoint/view.html');
                         }
                 }); 
-                var activeView = '.sumit-view';
-                $(activeView).show().siblings().hide();
+                
             },
             cancel: function() {
         			//navigator.notification.alert("Y R U cancle");
@@ -86,8 +109,11 @@ app.detailsgifts = kendo.observable({
   
     		},
             close_func :function() {
+                /*
                 var activeView = '.details-view';
         		 $(activeView).show().siblings().hide();
+                */
+                app.mobileApp.navigate('components/burnPoint/view.html');
             },
             
         };
@@ -109,7 +135,11 @@ app.detailsgifts = kendo.observable({
                       kendo.bind($('#data2Content'),detailsgifts);
                       kendo.bind($('#sumitContent'),detailsgifts);
                     
-                            				}
+                            				},
+                error: function(result) {
+                            navigator.notification.alert("ไม่พบรหัส gift");    
+                            app.mobileApp.navigate('components/burnPoint/view.html');
+                        }
                     }); 
         
 

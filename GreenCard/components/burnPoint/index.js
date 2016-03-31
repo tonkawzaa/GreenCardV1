@@ -15,12 +15,16 @@ app.burnPoint = kendo.observable({
                                 //navigator.notification.alert(result);
                                 options.success(result.data);
                                 
-                            }
+                            },
+                            error: function(result) {
+                            //navigator.notification.alert(result);   
+                               navigator.notification.alert("เชื่อมต่อข้อมูล evevt_gifts ผิดพลาด"); 
+                            },
                         });
                     }
             },
        // serverPaging: true,
-         pageSize: 4,
+        // pageSize: 4,
     }),
     /*
      data2: new kendo.data.DataSource({
@@ -73,7 +77,7 @@ app.burnPoint = kendo.observable({
                             //result.set("data","55555" );
                             
                             kendo.unbind($("#headerburnPoint"));
-                               kendo.bind($("#headerburnPoint"),result);
+                            kendo.bind($("#headerburnPoint"),result);
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    
@@ -93,9 +97,10 @@ app.burnPoint = kendo.observable({
                                     });
                                 
                              },
-                        error: function(result) {
-                            navigator.notification.alert(result);    
-                        },
+                            error: function(result) {
+                            //navigator.notification.alert(result);   
+                               navigator.notification.alert("เชื่อมต่อข้อมูล gifts ผิดพลาด"); 
+                            },
                   });
         
         

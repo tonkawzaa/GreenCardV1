@@ -14,13 +14,21 @@ app.earnbyid = kendo.observable({
                             dataType: "json",
                             success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -36,15 +44,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "บริการสุขภาพ" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -60,15 +76,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "เครื่องนุ่งห่ม" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -84,15 +108,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "อิเล็กทรอนิกส์" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -108,15 +140,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "เครื่องใช้ไฟฟ้าและแสงสว่าง" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -132,15 +172,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "เครื่องใช้สำนักงาน" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -156,15 +204,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "วัสดุก่อสร้าง" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -180,15 +236,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "เครื่องใช้ในบ้านเรือน" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -204,15 +268,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "การเดินทาง" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -228,15 +300,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "โรงแรม" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -252,15 +332,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "สถานที่ท่องเที่ยว" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },
@@ -276,15 +364,23 @@ app.earnbyid = kendo.observable({
                             contentType: "application/json; charset=utf-8",
                              data: JSON.stringify({ category_name: "สถานีบริการ" }),
                             dataType: "json",
-                            success: function (result) {
+                                success: function (result) {
                                 //navigator.notification.alert(result.data);
-                                 options.success(result.data);
-                                },
+                                if(result.data.error_code == "ProdsByCatError01")
+                                {
+                                    navigator.notification.alert("ไม่พบชนิดของสินค้า");
+                                    app.mobileApp.navigate('components/earn/view.html');
+                                }else{
+                                    options.success(result.data);
+                                }
+                                 
+                               },
                                    
                                 
                              
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("ระบบผิดพลาด");
                                                 },
                           });
                     },

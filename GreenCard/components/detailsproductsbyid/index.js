@@ -12,33 +12,39 @@ app.detailsproductsbyid = kendo.observable({
                data: JSON.stringify({ id: item }),
                success: function(result) {
                             
-                //navigator.notification.alert(result.data);
+                //navigator.notification.alert(result);
+                      if(result.data.id){
                             
-                     var product_by_id  = result.data;
-                     kendo.bind($("#product_by_idview"),product_by_id);
-                     kendo.bind($("#product_by_id_main_img"),product_by_id);
-                   kendo.bind($("#product_by_id_desc_to_publish"),product_by_id);
-                 
-                   e.view.element.find("#scrollView_product_by_id").kendoMobileListView({
-        			template: kendo.template($("#tmp").html()),
-        			dataSource: result.data.certifications,           
-                     });
-                            /*
-                   e.view.element.find("#product_by_id_list_cert").kendoMobileScrollView({
-        			template: kendo.template($("#product_by_id_list_cert_tmp").html()),
-        			dataSource: result.data.certifications, 
-                    contentHeight: 100,
-                    enablePager: true,
-                     });
-                   
-                  */
+                             var product_by_id  = result.data;
+                             kendo.bind($("#product_by_idview"),product_by_id);
+                             kendo.bind($("#product_by_id_main_img"),product_by_id);
+                           kendo.bind($("#product_by_id_desc_to_publish"),product_by_id);
+                         
+                           e.view.element.find("#scrollView_product_by_id").kendoMobileListView({
+                			template: kendo.template($("#tmp").html()),
+                			dataSource: result.data.certifications,           
+                             });
+                                    /*
+                           e.view.element.find("#product_by_id_list_cert").kendoMobileScrollView({
+                			template: kendo.template($("#product_by_id_list_cert_tmp").html()),
+                			dataSource: result.data.certifications, 
+                            contentHeight: 100,
+                            enablePager: true,
+                             });
+                           
+                          */
+                          
+                      }else{
+                          navigator.notification.alert("ไม่พบสินค้า");
+                          app.mobileApp.navigate('components/earn/view.html');
+                      }
+
                    
                 },
-                
-                	
-                error: function(result) {
-                      navigator.notification.alert(result.error_message);
 
+                error: function(result) {
+                      navigator.notification.alert("ไม่พบสินค้า");
+                      app.mobileApp.navigate('components/earn/view.html');
                          },
              });
          /*
@@ -92,20 +98,20 @@ app.detailsproductsbyid = kendo.observable({
                         }
                 });
          
-      var detailsshopModel = kendo.observable({
+      var detailsshopbyidModel = kendo.observable({
         
         fields: {
             selectedshop: 3,
         },
 
         }); 
-        kendo.bind($('#radioselectedshop'),detailsshopModel);
+        kendo.bind($('#radioselectedshopearnbyid'),detailsshopbyidModel);
          
-         var confirmsdata = {
+         var confirmsdatabyid = {
                 confirms: function() {
                     
                     //navigator.notification.alert(item);
-                    //navigator.notification.alert(detailsshopModel.fields.selectedshop);
+                    //navigator.notification.alert(detailsshopbyidModel.fields.selectedshop);
                     
                   $.ajax({
                         type: "POST",
@@ -113,13 +119,33 @@ app.detailsproductsbyid = kendo.observable({
                         contentType: "application/json",
                 		headers: {'Authorization' : header_token},
                         data: JSON.stringify({ product_id: item ,
-                                               shop_id : detailsshopModel.fields.selectedshop, }),
+                                               shop_id : detailsshopbyidModel.fields.selectedshop, }),
                         success: function(result) {                
-                            navigator.notification.alert(result);
-                            //app.mobileApp.navigate('components/detailsproductsuccess/view.html');
+                            //navigator.notification.alert(result);
+                            
+                            
+                            if(result.data.new_points)
+                            {
+                                //navigator.notification.alert("detailsproductsuccess");
+                                app.mobileApp.navigate('components/detailsproductsuccess/view.html');
+                            }else
+                            if(result.data.error_code=="EarnError01")
+                            {
+                                navigator.notification.alert("วันนี้คุณสะสมแต้มสินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="EarnError02")
+                            {
+                                navigator.notification.alert("เดือนนี้คุณสะสมแต้มสินค้านี้ครบลิมิต");
+                            }else if(result.data.error_code=="EarnError03")
+                            {
+                                navigator.notification.alert("วันนี้สินค้าครบลิมิต");
+                            }else if(result.data.error_code=="EarnError04")
+                            {
+                                navigator.notification.alert("เดือนนี้สินค้าครบลิมิต");
+                            }
                         },
                         error: function(result) {
-                            navigator.notification.alert(result);    
+                            //navigator.notification.alert(result);    
+                            navigator.notification.alert("ระบบผิดพลาด"); 
                         }
                     });
                     
@@ -128,8 +154,8 @@ app.detailsproductsbyid = kendo.observable({
                  app.mobileApp.navigate('components/earn/view.html');
                  },
         };
-        kendo.bind($('#confirms_earn'),confirmsdata);
-        kendo.bind($('#selectshops'),confirmsdata);
+        kendo.bind($('#confirms_earnbyid'),confirmsdatabyid);
+        kendo.bind($('#selectshopsearnbyid'),confirmsdatabyid);
       
     },
     afterShow: function() {},
