@@ -16,7 +16,7 @@ app.reigister = kendo.observable({
     var token= null ;
     var reigisterModel = kendo.observable({
         fields: {
-            /*
+            
             occupation: '',
             citizenid: '1234567890',
             birthdate: '',
@@ -27,7 +27,7 @@ app.reigister = kendo.observable({
             lastname: 'lastname',
             firstname: 'firstname',
             email: 'top@gmail.com',
-            */
+            /*
             occupation: '',
             citizenid: '',
             birthdate: '',
@@ -38,10 +38,14 @@ app.reigister = kendo.observable({
             lastname: '',
             firstname: '',
             email: '',
+            */
         },
 
-        submit: function() {
-             $.ajax({
+        submit: function(e) {
+            var validator = $("#signup2_form").data("kendoValidator");
+            if (validator.validate()) {
+                        //navigator.notification.alert(validator.validate());
+                         $.ajax({
                         type: "POST",
                         url: "https://greenapi.odooportal.com/api/v1/signup",
                         contentType: "application/json",
@@ -59,21 +63,39 @@ app.reigister = kendo.observable({
                                              }),
                         success: function(result) {
                             //navigator.notification.alert(result);
+                            if(result.data.access_token)
+                            {
+                                token = null ;
+                                localStorage.clear();
+                                localStorage.setItem("token",result.data.access_token);
+                               // navigator.notification.alert(result.data.access_token);
+                                token = result.data.access_token;
+                                app.mobileApp.navigate('components/reigister/success.html');
+                            }else
+                            if(result.data.error_code=="SignupError01")
+                            {
+                                navigator.notification.alert("โปรดกรอกข้อมูลให้ครบ");
+                            }else if(result.data.error_code=="SignupError02")
+                            {
+                                navigator.notification.alert("กรอก password ไม่ตรงกัน");
+                            }else if(result.data.error_code=="SignupError03")
+                            {
+                                navigator.notification.alert("กรุณากรอก e-mail ให้ถูกต้อง");
+                            }else if(result.data.error_code=="SignupError04")
+                            {
+                                navigator.notification.alert("มี e-mail ในระบบเรียบร้อยแล้ว");
+                            }
                             
-                            token = null ;
-                            localStorage.clear();
-                            localStorage.setItem("token",result.data.access_token);
-                            //navigator.notification.alert(result.data.access_token);
-                            //token = result.data.access_token;
-                            app.mobileApp.navigate('components/reigister/success.html');
+                            
                             
                         },
                         error: function(result) {
-                            navigator.notification.alert(result);
-                            //navigator.notification.alert("กรอกข้อมูลไม่ถูกต้อง");
+                            //navigator.notification.alert(result);
+                            navigator.notification.alert("เชื่อมต่อผิดพลาด");
                             
                         }
-                });
+                                });
+                    }
         },
         
          toggleView: function(e) {
@@ -85,12 +107,15 @@ app.reigister = kendo.observable({
                         //navigator.notification.alert(validator.validate());
                         $(activeView).show().siblings().hide();
                     }else{
-                       //navigator.notification.alert(validator.validate());
+                       navigator.notification.alert("โปรดกรอกข้อมูลให้ครบ");
                     }
                 
             },
         termofuse: function() {
                 app.mobileApp.navigate('components/termsofuse/view.html');
+            },
+         gohome: function() {
+                app.mobileApp.navigate('components/home/view.html');
             },
         gowelcome: function() {
                 app.mobileApp.navigate('components/welcome/view.html');

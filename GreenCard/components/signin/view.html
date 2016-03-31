@@ -9,17 +9,21 @@
    
     <p style="margin:10px 20px;font-size:25px;"><b>เข้าสู่ระบบ</b></p>
 
-        <div id="signinModel" >
+        <div id="signinModel" data-role="validator" novalidate="novalidate" >
             <form>
                 <table style="width:95%;margin:0px 10px 0px 10px;" class="message" >
                    <tr class="backgroundimg" >
                        <td>
-                           <input style="width:80%;" data-bind="value: signinModel.fields.email" placeholder="อีเมล์ของคุณ" type="email">
-                       </td>
+                           <input id="signinemail" name="signinemail" style="width:80%;" data-bind="value: signinModel.fields.email"  required validationMessage="***" placeholder="อีเมล์ของคุณ" type="email" >
+                           <span class="k-invalid-msg" data-for="signinemail"></span>
+                           
+                       </td> 
                   </tr>
-                  <tr class="backgroundimg">
+                  <tr class="backgroundimg"> 
                       <td>
-                          <input style="width:80%;" data-bind="value: signinModel.fields.password" placeholder="รหัสผ่าน" type="password">
+                          <input id="signinpassword" name="signinpassword" style="width:80%;" data-bind="value: signinModel.fields.password" required validationMessage="***" placeholder="รหัสผ่าน" type="password">
+                      
+                          <span class="k-invalid-msg" data-for="signinpassword"></span>
                       </td>
                   </tr>
                   <tr style="height:40vh;">
@@ -37,7 +41,14 @@
           <table style="width:100%">
   <tr>
     <td style="float:left;margin:10px 20px;" ><span class="form_reg" data-bind="events: { click: signinModel.gotermofuse }">ข้อตกลงการใช้งาน</span></td> 
-      <td style="float:right;margin:10px 20px;" ><span class="form_reg" data-bind="events: { click: signinModel.goforgotpass }">ลืมรหัสผ่าน</span></td>
+      <td style="float:right;margin:10px 20px;" >
+          <!--
+          <span class="form_reg" data-bind="events: { click: signinModel.goforgotpass }">ลืมรหัสผ่าน</span>
+          -->
+          <a class="form_reg" href="http://apache.org" data-rel="external" target="_blank">
+              <span class="form_reg">ลืมรหัสผ่าน</span>
+          </a>
+          </td>
   </tr>
         </table>
         

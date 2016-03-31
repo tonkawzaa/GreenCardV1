@@ -1,7 +1,7 @@
 <div data-role="view" data-title="" data-layout="main" data-model="app.reigister" data-show="app.reigister.onShow" data-after-show="app.reigister.afterShow">
     
     <div  class="signup1-view" style="height:100vh">
-        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.termofuse }">
+        <img src="images/button-arrow-left.png" alt="left" style="margin:10px 10px;width: 15px; height: auto;" data-bind="events: { click: reigisterModel.gohome }">
         <p style="margin:10px 20px;font-size:25px;"class="message"><b>
             ลงทะเบียน
         </b></p>
@@ -166,7 +166,7 @@
                 </p>
             </td>
              <td>
-                 <input id="citizenid" name="citizenid"  class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="text" required validationMessage="***">
+                 <input id="citizenid" name="citizenid"  class="form_reg" data-bind="value: reigisterModel.fields.citizenid" type="number" required validationMessage="***">
                  <span class="k-invalid-msg" data-for="citizenid"></span>
              </td>
          </tr>

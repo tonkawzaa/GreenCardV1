@@ -115,8 +115,8 @@ app.detailsproductsbyid = kendo.observable({
                         data: JSON.stringify({ product_id: item ,
                                                shop_id : detailsshopModel.fields.selectedshop, }),
                         success: function(result) {                
-                            //navigator.notification.alert(result);
-                            app.mobileApp.navigate('components/detailsproductsuccess/view.html');
+                            navigator.notification.alert(result);
+                            //app.mobileApp.navigate('components/detailsproductsuccess/view.html');
                         },
                         error: function(result) {
                             navigator.notification.alert(result);    

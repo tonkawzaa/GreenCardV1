@@ -18,19 +18,22 @@ app.signin = kendo.observable({
             password: '',
             email: '',
         },
-        submit: function() {
-            
-            $.ajax({
+        submit: function(e) {
+            var validator = $("#signinModel").data("kendoValidator");
+            if (validator.validate()) {
+                 $.ajax({
                         type: "POST",
                         url: "https://greenapi.odooportal.com/api/v1/login",
                         contentType: "application/json",
                         data: JSON.stringify({ login: signinModel.fields.email,password: signinModel.fields.password }),
                         success: function(result) {
+                                                        
                             var token = null ;
                             localStorage.setItem("token",result.data.access_token);
                             //navigator.notification.alert(result.data.access_token);
                             app.mobileApp.navigate('components/welcome/view.html');
                             //token = result.data.access_token;
+                            
                         },
                         error: function(result) {
                             //navigator.notification.alert(result);
@@ -38,7 +41,9 @@ app.signin = kendo.observable({
                             
                         }
                 });
-                
+            }else{
+                navigator.notification.alert("กรุณากรองข้อมูลให้ครบ");
+            }
             
         },
         gohome: function() {

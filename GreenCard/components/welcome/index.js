@@ -1,8 +1,8 @@
 'use strict';
 
 app.welcome = kendo.observable({
-    onShow: function() {
-        /*
+    onShow: function(e) {
+        
         var header_token = null;
             
         var token = null;
@@ -16,16 +16,18 @@ app.welcome = kendo.observable({
                 		headers: {'Authorization' : header_token},
                         success: function(result) {
                             
-                            navigator.notification.alert(result.data);
+                            //navigator.notification.alert(result.data);
                             
                      
                         },
                         error: function() {
-                            navigator.notification.alert(result);
+                            
+                            navigator.notification.alert("กรุณาลงชื่อเข้าใช้ใหม่");
+                            app.mobileApp.navigate('components/signin/view.html');
                             
                         }
                 });
-        */
+        
     },
     afterShow: function() {}
 });
