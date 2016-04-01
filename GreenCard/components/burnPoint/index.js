@@ -18,7 +18,7 @@ app.burnPoint = kendo.observable({
                             },
                             error: function(result) {
                             //navigator.notification.alert(result);   
-                               navigator.notification.alert("เชื่อมต่อข้อมูล evevt_gifts ผิดพลาด"); 
+                               navigator.notification.alert("เชื่อมต่อข้อมูล event_gifts ผิดพลาด"); 
                             },
                         });
                     }
