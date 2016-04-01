@@ -1,9 +1,10 @@
 'use strict';
 
+
 (function() {
     var app = {
         data: {},
-        
+
     }
 
 
@@ -76,6 +77,8 @@
             return navigator.connection.type !== 'none';
         }
     };
+    
+
     
 }());
 

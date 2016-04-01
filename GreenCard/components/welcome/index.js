@@ -1,6 +1,10 @@
 'use strict';
 
 app.welcome = kendo.observable({
+    
+    hidedrawer : function(){
+        navigator.notification.alert("hidedrawer");
+    },
     onShow: function(e) {
         
         var header_token = null;
@@ -27,6 +31,8 @@ app.welcome = kendo.observable({
                             
                         }
                 });
+        
+               
         
     },
     afterShow: function() {}

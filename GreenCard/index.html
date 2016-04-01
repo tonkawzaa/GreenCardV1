@@ -46,21 +46,23 @@
         </header>
     </div>
 
-    <div id="appDrawer" data-role="drawer" data-title="Menu">
+    <div id="appDrawer" data-role="drawer" data-title="Menu" data-swipe-to-open="false">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
-        <!--
+        
         <ul id="navigation-container" data-role="listview">
+            <li><a data-bind="events: { click: app.welcome.hidedrawer }" data-role="button">Hide me</a></li>
             <li><a href="components/home/view.html" data-icon="home">Home View</a></li>
             <li><a href="components/termsofuse/view.html" data-icon="details">terms of use</a></li>
             <li><a href="components/reigister/view.html" data-icon="bookmarks">reigister</a></li>
             <li><a href="components/signin/view.html" data-icon="details">signin</a></li>
             <li><a href="components/forgotpass/view.html" data-icon="bookmarks">forgotpass</a></li>
         </ul>
-        -->
+        
+        
     </div>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
