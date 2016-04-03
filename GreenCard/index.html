@@ -46,7 +46,7 @@
         </header>
     </div>
 
-    <div id="appDrawer" data-role="drawer" data-title="Menu" data-swipe-to-open="false">
+    <div id="appDrawer" data-role="drawer" data-title="Menu" data-swipe-to-open="false" data-model="app.earn" data-show="app.earn.onShow" data-after-show="app.earn.afterShow">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
@@ -54,7 +54,7 @@
         </header>
         
         <ul id="navigation-container" data-role="listview">
-            <li><a data-bind="events: { click: app.welcome.hidedrawer }" data-role="button">Hide me</a></li>
+            <li><a data-bind="events: { click: earnModel.earn }" data-role="button">Hide me</a></li>
             <li><a href="components/home/view.html" data-icon="home">Home View</a></li>
             <li><a href="components/termsofuse/view.html" data-icon="details">terms of use</a></li>
             <li><a href="components/reigister/view.html" data-icon="bookmarks">reigister</a></li>

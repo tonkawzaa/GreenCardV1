@@ -4,8 +4,10 @@
 (function() {
     var app = {
         data: {},
+        
 
     }
+    
 
 
     var bootstrap = function() {
@@ -81,6 +83,10 @@
 
     
 }());
+
+
+
+
 
 
 // START_CUSTOM_CODE_kendoUiMobileApp
